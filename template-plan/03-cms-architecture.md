@@ -1,46 +1,31 @@
-# CMS Architecture Standard
+# Stage 3: Bootstrap and CMS Mode Setup
 
-## Core model
+Use this stage to start from local mode, then enable Sanity only when selected.
 
-- Use `page` documents as the primary content source.
-- Each page contains `sections[]`.
-- Each section has a stable `key` used by frontend renderers.
+## Bootstrap actions
 
-## Required page slugs (baseline)
+- Copy starter files into repo root.
+- Create `.env.local` from `.env.example`.
+- Start with `CONTENT_SOURCE=local` and verify app renders.
 
-- `home`
-- `about`
-- `services`
-- `services/<service-slug>`
-- `resources`
-- `contact`
+## Content mode paths
 
-## Section contract guidance
+- Local mode:
+  - `CONTENT_SOURCE=local`
+  - run without Sanity credentials
+- Sanity mode:
+  - `CONTENT_SOURCE=sanity`
+  - set `NEXT_PUBLIC_SANITY_PROJECT_ID`
+  - set `NEXT_PUBLIC_SANITY_DATASET`
+  - optional `SANITY_API_READ_TOKEN`
 
-- Keep keys explicit and predictable (examples: `hero`, `trust`, `cta`, `faq`, `related`).
-- For each key, define required fields in schema validation.
-- Do not duplicate semantics under multiple keys.
+## Fallback contract
 
-## Media strategy
+- If Sanity env/config is missing, warn and fall back to local.
+- If Sanity fetch fails, warn and fall back to local.
+- No silent fallback: warning must include mode, page/route, reason, next action.
 
-- Primary media lives in Sanity image fields.
-- Frontend must always have hardcoded local fallback assets in `public/media`.
-- Always include `imageAlt` where image exists.
+## Required output
 
-## SEO strategy (organized, non-duplicative)
-
-- Each `page` document includes a small SEO snippet.
-- Global site-level SEO defaults exist in one global settings document.
-- No duplicate SEO controls spread across unrelated docs.
-
-### SEO precedence contract
-
-For each field (`title`, `description`, `noIndex`, optional OG/Twitter):
-
-1. page-level value
-2. global SEO default
-3. hardcoded safe fallback
-
-## CMS governance rule
-
-Any new CMS module (new doc type, new collection, new global settings area) must be proposed and approved before being added to template core.
+- Bootstrap evidence (`dev` run and first page render).
+- Mode decision confirmation and environment status.

@@ -1,22 +1,32 @@
-# Website Template Plan Package
+# Template Plan Runbook
 
-This folder is a portable planning package for your reusable website stack template.
-It is designed so you can copy this folder into a new GitHub repo and use it as the
-source of truth for implementation decisions and scope.
+Use this folder as the execution playbook for building each new site from the starter boilerplate.
 
-## What this package contains
+## Run in this order
 
-- Product plan and scope boundaries
-- v0.1 acceptance criteria
-- CMS architecture standards
-- Component library strategy (including shadcn)
-- SEO precedence contract
-- Deployment and operations runbook
-- Quality gates and launch checklist
+1. `00-master-runbook.md`
+2. `01-product-plan.md`
+3. `02-v01-scope-matrix.md`
+4. `03-cms-architecture.md`
+5. `04-component-library-plan.md`
+6. `05-deployment-runbook.md`
+7. `06-launch-checklist.md`
+8. `07-implementation-rules.md`
 
-## Suggested next action
+If any document conflicts, `00-master-runbook.md` is canonical.
 
-1. Create a new GitHub repo for your template product.
-2. Copy this entire `template-plan` folder into that repo.
-3. Use `01-product-plan.md` as your master planning document.
-4. Track progress against `02-v01-scope-matrix.md`.
+## Supporting files
+
+- `checklists/figma-to-contract-checklist.md`
+- `checklists/content-integrity-checklist.md`
+- `checklists/release-checklist.md`
+- `decision-logs/README.md`
+- `project-state.md`
+
+## Non-negotiable operating rules
+
+- Treat top-level Figma frames as page/route candidates first.
+- Break each page into ordered sections before section-key mapping.
+- Never render raw generated components directly in route pages.
+- Keep clarification low interruption: batch unknown sections and checkpoint at Stage 2 and Stage 5.
+- Track process progress in `project-state.md` at every stage transition.

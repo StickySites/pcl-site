@@ -1,49 +1,24 @@
-# Deployment Runbook
+# Stage 5: Implementation and Deployment Gates
 
-## Deployment tracks (separate concerns)
+Use this stage after core implementation to verify release readiness.
 
-1. App deploy (Next.js)
-2. Schema deploy (Sanity schema metadata)
-3. Optional hosted Studio deploy (Sanity-hosted Studio UI)
+## Stage-level clarification checkpoint (mandatory)
 
-Treat these as independent operations.
+- Run one consolidated clarification checkpoint at end of Stage 5.
+- Do not perform repeated ad-hoc clarification interrupts during implementation when batching is safe.
 
-## Local development
+## Validation commands
 
-- Run app locally with `/studio`.
-- Iterate on schema in code.
-- Keep generated folders ignored.
+- `npm run lint`
+- `npm run typecheck`
+- `npm run build`
 
-## Schema updates
+## Sanity-specific checks (when enabled)
 
-- After schema changes, run schema deploy.
-- Verify schema appears in Sanity project.
+- Schema deployed after schema changes.
+- Required `page` documents exist for expected routes.
 
-## App deployment (Vercel-first)
+## Required output
 
-- Ensure env vars are configured:
-  - `NEXT_PUBLIC_SANITY_PROJECT_ID`
-  - `NEXT_PUBLIC_SANITY_DATASET`
-  - `NEXT_PUBLIC_SANITY_API_VERSION`
-  - `SANITY_API_READ_TOKEN` (if required)
-  - `NEXT_PUBLIC_SITE_URL`
-- Run production build validation before release.
-
-## Optional hosted Studio path
-
-- Use only when business/editorial need exists.
-- Build and deploy Studio separately.
-- Do not commit Studio build artifacts.
-
-## Generated folders policy
-
-Always ignore:
-
-- `.next`
-- `dist`
-- `.sanity`
-- `node_modules`
-
-## Hostinger note
-
-Use Node runtime path for Next.js apps. Static-only hosting is not equivalent to a full Next.js runtime for dynamic features.
+- Validation command results.
+- Updated unresolved-items status (should be empty or explicitly accepted).

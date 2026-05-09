@@ -4,31 +4,52 @@ Executable scaffold that pairs with `template-plan/`. Copy this folder into a ne
 
 ## What is included
 
-- **Next.js 16** App Router (`app/`)
-- **Tailwind CSS** + **PostCSS** (`tailwind.config.ts`, `postcss.config.js`, `app/globals.css`)
-- **shadcn-style UI** baseline: `components.json`, `lib/utils.ts` (`cn`), and `components/ui/` (`button`, `card`). Add more with the shadcn CLI.
-- **Sanity**: `sanity.config.ts`, `sanity.cli.ts`, full `sanity/schemaTypes/` (page, sections, SEO, site settings, resources), GROQ in `lib/sanity/queries.ts`
-- **Embedded Studio** at `/studio` via `next-sanity`
-- **CMS shell**: `lib/sanity/*`, `lib/content.ts` with safe fetch + homepage fallback
-- **Docs & scripts**: `docs/`, `scripts/`
+- Next.js 16 App Router (`app/`)
+- Tailwind CSS + PostCSS baseline
+- shadcn baseline UI components in `components/ui/`
+- Optional Sanity integration (`sanity.config.ts`, `sanity/schemaTypes`, `lib/sanity/*`, `/studio`)
+- Content source dispatcher in `lib/content/` with local-first fallback behavior
+- Starter docs in `docs/`; canonical runbook/checklists live in repo-root `template-plan/`
 
-## Quick start
+## Content source modes
+
+- `CONTENT_SOURCE=local` (default): load page content from local data.
+- `CONTENT_SOURCE=sanity`: load from Sanity; if config or fetch fails, the app logs structured warnings and falls back to local.
+
+Warning IDs used by the starter:
+- `CONTENT_SOURCE_INVALID`
+- `SANITY_ENV_MISSING`
+- `SANITY_FETCH_FAILED`
+- `PAGE_NOT_FOUND`
+
+## Quick start (zero external services)
 
 1. Copy everything under `starter/` to your new repo root.
-2. `cp .env.example .env.local` and set `NEXT_PUBLIC_SANITY_PROJECT_ID` (and optional `SANITY_API_READ_TOKEN` for draft/private datasets).
+2. `cp .env.example .env.local`
 3. `npm install`
-4. `npm run dev` — open [http://localhost:3000](http://localhost:3000). Studio: [http://localhost:3000/studio](http://localhost:3000/studio).
-5. In Sanity, create singletons/documents as needed (e.g. one `page` with slug `home` and at least one section). Until then, the app uses the fallback page from `lib/content.ts`.
-6. Deploy schema to your Sanity project (from repo root, with env loaded):
+4. `npm run dev`
+5. Open [http://localhost:3000](http://localhost:3000) and confirm local content renders.
 
-   ```bash
-   npx sanity@latest schema deploy
-   ```
+## Optional: Sanity mode
 
-   Or use `scripts/sanity-schema-deploy.sh` after `npx sanity login`.
+1. Set `CONTENT_SOURCE=sanity` in `.env.local`.
+2. Provide:
+   - `NEXT_PUBLIC_SANITY_PROJECT_ID`
+   - `NEXT_PUBLIC_SANITY_DATASET`
+   - optional `SANITY_API_READ_TOKEN` (if required for your dataset setup)
+3. Run `npx sanity@latest schema deploy` after `npx sanity login`.
+4. Create/update `page` documents in Sanity (for example slug `home`).
 
-Standalone Studio (optional): `npm run studio` runs `sanity dev` using `sanity.cli.ts` (ensure the same env vars are available in the shell or a `.env` file Sanity CLI reads).
+Standalone Studio remains optional:
+- `npm run studio`
+
+## Figma-first implementation rule
+
+- Treat top-level Figma frames as pages/routes first.
+- Break each page into ordered sections before section-key mapping.
+- Never render raw generated components directly in route pages.
+- Always wrap/adapt generated pieces through `components/sections` or `components/primitives`.
 
 ## Environment
 
-See `.env.example`. `NEXT_PUBLIC_*` values are required for Studio and live queries; `SANITY_API_READ_TOKEN` is optional for public datasets but needed for token-based access.
+Use `.env.example` as the starter template. Local mode should work with no Sanity credentials.

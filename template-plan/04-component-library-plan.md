@@ -1,53 +1,24 @@
-# Component Library Plan
+# Stage 4: Component and Rendering Rules
 
-## Goals
+Use this stage to enforce safe rendering boundaries.
 
-- Maximize reuse across future sites.
-- Minimize rewriting of base UI patterns.
-- Keep style customization easy without breaking component behavior.
+## Rendering safety rule (mandatory)
 
-## Folder strategy
+- Never render raw generated/imported design components directly in route pages.
+- Route pages must compose wrapped/adapted components from:
+  - `components/sections`
+  - `components/primitives`
 
-- `components/shadcn/` for baseline imported shadcn components.
-- `components/primitives/` for project wrappers and variants.
-- `components/compositions/` for multi-element blocks.
-- `components/sections/` for CMS section renderers.
+## Contract validity definition
 
-## Baseline shadcn set (v0.1)
+A required page is valid only when:
+- all required section keys for that page are present
+- required fields for those sections are populated
+- renderer mapping exists for each required section key
 
-- `button`
-- `input`
-- `textarea`
-- `select`
-- `card`
-- `dialog`
-- `sheet`
-- `accordion`
-- `tabs`
-- `form`
-- `badge`
-- `separator`
+If any required condition fails, mark as blocking.
 
-## Reusable composition targets (v0.1)
+## Required output
 
-- Hero block
-- CTA band
-- Feature grid
-- FAQ section
-- Testimonial block
-- Service card grid
-
-## Contract per component
-
-For each component or section renderer, define:
-
-- expected props
-- expected CMS fields
-- fallback behavior when CMS data is missing
-- accessibility requirements
-- style variant interface
-
-## Motion and accessibility
-
-- Provide motion modes: `off`, `subtle`, `enhanced`.
-- Respect reduced-motion system preference by default.
+- Renderer coverage report.
+- Unmapped sections report (single batched artifact).
