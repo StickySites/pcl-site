@@ -49,6 +49,7 @@ CANONICAL INSTRUCTION RULE
 OPERATING MODE
 - Treat top-level Figma frames as page/route candidates first, then split each page into ordered sections.
 - Never render raw generated components directly in route pages; wrap/adapt via `components/sections` or `components/primitives`.
+- Wrapping/adaptation is structural only; it must not remove mapped Figma sections, assets, icons, SVGs, or required states.
 - Use low-interruption behavior: batch unknown sections and checkpoint clarifications at Stage 2 and Stage 5.
 - If route intent is unclear, pause once with a consolidated clarification question.
 
@@ -74,8 +75,14 @@ OUTPUT FORMAT
   - runbook stage being executed
   - missing required inputs (if any)
   - planned actions for this run
+- Reconciliation outputs (required before completion):
+  - manifest_status
+  - reconciliation_status
+  - missing_required_items
+  - deviation_log
 - Then execute.
 - Update `template-plan/project-state.md` at each stage transition.
+- Do not mark the run complete if any required manifest item is missing.
 ```
 
 ## Execution rules

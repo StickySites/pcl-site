@@ -25,6 +25,15 @@
 3. If blocked/uncertain, set `status=blocked` with exact reason and next action.
 4. On resume, read `project-state.md` first and continue from `next_action`.
 
+## Non-loss deviation rules
+
+- No silent deviations from the approved Figma manifest are allowed.
+- Any intentional difference must be recorded in a deviation log with:
+  - item
+  - reason
+  - approval status
+- Completion is invalid if differences exist and no deviation log is provided.
+
 ## Handover output
 
 - Delivery summary.

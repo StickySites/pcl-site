@@ -30,13 +30,20 @@ Actions:
 - Confirm route list (or ask once if ambiguous).
 - Break each page into ordered sections.
 - Produce section-to-key mapping and asset manifest.
+- Produce a non-loss manifest before implementation with:
+  - page list
+  - ordered sections per page
+  - required assets/icons/SVGs per section
+  - required interactive states per section (for example active navigation state)
 
 Validation:
 - Page list confirmed.
 - Unmapped sections batched into a single review checkpoint.
+- Non-loss manifest exists and is complete for required scope.
 
 Outputs:
 - Mapping table.
+- Non-loss manifest.
 - Handoff pass/fail decision.
 
 ## Stage 3: Bootstrap and env

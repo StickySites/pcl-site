@@ -6,3 +6,4 @@
 - [ ] Each section mapped to canonical section key.
 - [ ] Unknown sections captured in batched unmapped report.
 - [ ] Assets referenced with usable sources (no screenshot placeholders as production content).
+- [ ] Non-loss manifest created (pages, ordered sections, required assets/icons/SVGs, required states).

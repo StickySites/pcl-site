@@ -5,6 +5,7 @@
 - Required routes render.
 - Required section keys render via mapped wrappers.
 - Contract validity passes for required scope.
+- Reconciliation report passed with no unresolved required items.
 
 ## Content source checks
 
@@ -23,3 +24,8 @@
 - Host env vars configured correctly.
 - App deployment smoke checks pass.
 - Schema deployment complete (if Sanity mode).
+
+## Completion rule
+
+- Do not mark launch complete if any required manifest item is missing.
+- Any unresolved required section/asset/state is a blocking failure.
