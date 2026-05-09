@@ -76,11 +76,20 @@ Outputs:
 Actions:
 - Implement page composition via section wrappers.
 - Keep generated components wrapped in `components/sections` or `components/primitives`.
+- Use `next/image` for implementation output; do not leave raw `<img>` in completion output.
+- If imported/generated code uses `<img>`, convert it before completion.
 - Run a second batched clarification checkpoint for unresolved sections.
 
 Validation:
 - Required section keys render through mapped wrappers.
 - Contract validity passes for required scope.
+- Required text fields are complete for required scope.
+- Token/color parity checks pass for required scope:
+  - page backgrounds
+  - section backgrounds
+  - key text colors
+  - nav active/inactive colors
+  - button state colors
 
 Outputs:
 - Renderer coverage report.

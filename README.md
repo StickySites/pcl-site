@@ -60,6 +60,11 @@ REQUIRED CONFIG
 - content_mode: <local|sanity>
 - sanity_project_id: <fill if content_mode=sanity>
 - sanity_dataset: <fill if content_mode=sanity>
+- quality_gate: strict
+- image_policy: next_image
+- require_text_completeness: true
+- require_token_parity: true
+- icon_substitution_policy: allowed_with_logging
 
 OPTIONAL CONTEXT
 - required_routes: <optional>
@@ -80,9 +85,16 @@ OUTPUT FORMAT
   - reconciliation_status
   - missing_required_items
   - deviation_log
+- Strict quality outputs (required before completion):
+  - lint_status
+  - typecheck_status
+  - build_status
+  - text_completeness_status
+  - token_parity_status
 - Then execute.
 - Update `template-plan/project-state.md` at each stage transition.
 - Do not mark the run complete if any required manifest item is missing.
+- Do not mark the run complete unless lint/typecheck/build all pass in strict mode.
 ```
 
 ## Execution rules

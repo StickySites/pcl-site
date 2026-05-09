@@ -15,7 +15,7 @@
 
 ## Quality gates
 
-- Lint passes.
+- Lint passes with zero warnings/errors.
 - Typecheck passes.
 - Build passes.
 
@@ -29,3 +29,4 @@
 
 - Do not mark launch complete if any required manifest item is missing.
 - Any unresolved required section/asset/state is a blocking failure.
+- Any lint/typecheck/build failure is a blocking failure.

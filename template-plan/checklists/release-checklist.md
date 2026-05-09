@@ -8,4 +8,5 @@
 - [ ] Warning/fallback behavior verified for Sanity misconfiguration.
 - [ ] Reconciliation report passed for required manifest items.
 - [ ] Missing required items list is empty or explicitly approved via deviation log.
+- [ ] Per-section reconciliation status table is complete for required scope.
 - [ ] Deployment smoke checks passed.

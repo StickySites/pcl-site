@@ -23,6 +23,12 @@ Use this stage after core implementation to verify release readiness.
 - `npm run typecheck`
 - `npm run build`
 
+Strict pass requirement:
+- Lint must pass with zero warnings/errors.
+- Typecheck must pass.
+- Build must pass.
+- If any strict command gate fails, set stage status to `blocked`.
+
 ## Sanity-specific checks (when enabled)
 
 - Schema deployed after schema changes.
@@ -37,3 +43,10 @@ Use this stage after core implementation to verify release readiness.
   - `reconciliation_status`
   - `missing_required_items`
   - `deviation_log`
+- Per-section reconciliation status table with:
+  - `text_status`
+  - `color_status`
+  - `image_status`
+  - `icon_status`
+  - `state_status`
+  - `result`

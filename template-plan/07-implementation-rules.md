@@ -33,6 +33,17 @@
   - reason
   - approval status
 - Completion is invalid if differences exist and no deviation log is provided.
+- Icon substitutions are allowed only when logged with:
+  - original icon
+  - replacement icon
+  - reason (`dependency_mismatch`)
+  - approval status
+
+## Image policy rule
+
+- Final implementation output must use `next/image`.
+- Raw `<img>` tags are not allowed in completion output.
+- If imported/generated code includes `<img>`, convert it before completion.
 
 ## Handover output
 
