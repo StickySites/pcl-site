@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, CheckCircle2, Shield } from "lucide-react";
+import { ArrowRight, Award, Building2, CheckCircle2, Factory, HardHat, Shield, ShieldCheck, Sparkles } from "lucide-react";
 import { HomeHeroBackground } from "@/components/figma-generated/home-hero-background";
+import type { CaseStudyCategory } from "@/lib/case-studies";
+import { getFeaturedCaseStudies } from "@/lib/case-studies";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -67,26 +70,15 @@ const trustIndicators = [
   { icon: Award, text: "20+ Years Experience" }
 ];
 
-const featuredProjects = [
-  {
-    title: "Industrial Warehouse Demolition",
-    category: "Demolition",
-    location: "Manchester",
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80"
-  },
-  {
-    title: "Commercial Office Refurbishment",
-    category: "Refurbishment",
-    location: "London",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-  },
-  {
-    title: "Hospital Asbestos Remediation",
-    category: "Asbestos Removal",
-    location: "Birmingham",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-  }
-];
+const categoryIcons: Record<CaseStudyCategory, typeof Building2> = {
+  asbestos: ShieldCheck,
+  demolition: Factory,
+  refurbishment: Building2,
+  enabling: HardHat,
+  remediation: Sparkles
+};
+
+const featuredCaseStudies = getFeaturedCaseStudies();
 
 export function PageHome() {
   return (
@@ -123,7 +115,7 @@ export function PageHome() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded border-2 border-white bg-transparent px-6 py-3 font-semibold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                Get in Touch
+                Get in touch
               </Link>
             </div>
           </div>
@@ -153,48 +145,60 @@ export function PageHome() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-12">
             {services.map((service) => (
               <Link
                 key={service.title}
                 href={service.href}
-                className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-all hover:border-brand hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="group flex w-[min(100%,580px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted/35 via-white to-white shadow-sm ring-1 ring-black/[0.03] transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:flex-row sm:items-stretch"
               >
-                <div
-                  className={`relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-muted ${
-                    service.imageContain ? "p-6 sm:p-8" : ""
-                  }`}
-                >
-                  <Image
-                    src={service.image}
-                    alt=""
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className={
-                      service.imageContain
-                        ? "object-contain object-center"
-                        : "object-cover transition-transform duration-300 group-hover:scale-105"
-                    }
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-6">
-                  <h3 className="mb-3 font-bold text-black group-hover:text-brand">{service.title}</h3>
-                  <p className="mb-4 text-muted-foreground">{service.description}</p>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-black/70">Covers</p>
-                  <ul className="mb-4 space-y-1.5 text-sm text-muted-foreground">
+                <div className="relative flex min-w-0 flex-1 flex-col border-t border-border/70 px-5 pb-5 pt-1 sm:border-t-0 sm:border-r-4 sm:border-brand sm:px-6 sm:py-5 sm:pl-6 sm:pr-5">
+                  <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand">Service</p>
+                  <h3 className="mt-2 text-xl font-bold leading-tight text-black group-hover:text-brand sm:text-2xl">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.description}</p>
+
+                  <p className="mb-2 mt-5 text-xs font-semibold uppercase tracking-wide text-black/70 sm:mt-6">
+                    What we cover
+                  </p>
+                  <ul className="grid grid-cols-1 gap-2">
                     {service.coverage.map((line) => (
-                      <li key={line} className="flex gap-2">
-                        <span className="text-brand" aria-hidden>
-                          ·
-                        </span>
-                        <span>{line}</span>
+                      <li key={line} className="flex items-start gap-2 text-sm text-black/90">
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                        <span className="leading-snug">{line}</span>
                       </li>
                     ))}
                   </ul>
-                  <span className="mt-auto inline-flex items-center gap-2 font-semibold text-brand">
-                    Learn More
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </span>
+
+                  <div className="mt-auto flex flex-col gap-3 border-t border-border/80 pt-4 sm:flex-row sm:items-center sm:justify-between sm:pt-5">
+                    <span className="text-xs text-muted-foreground">HSE-led planning and documentation</span>
+                    <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand">
+                      Explore
+                      <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    </span>
+                  </div>
+                </div>
+
+                <div className="shrink-0 p-4 pb-2 sm:flex sm:w-[48%] sm:flex-col sm:self-stretch sm:p-5 sm:pb-5 sm:pl-2 sm:pr-5 sm:pt-5">
+                  <div
+                    className={cn(
+                      "relative mx-auto aspect-[4/3] w-full max-w-sm overflow-hidden rounded-xl bg-muted sm:mx-0 sm:max-w-none sm:aspect-auto sm:h-full sm:min-h-[220px] sm:flex-1",
+                      service.imageContain && "p-4 sm:p-5"
+                    )}
+                  >
+                    <Image
+                      src={service.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 640px) 280px, 100vw"
+                      className={
+                        service.imageContain
+                          ? "object-contain object-center"
+                          : "object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      }
+                    />
+                  </div>
                 </div>
               </Link>
             ))}
@@ -220,28 +224,43 @@ export function PageHome() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {featuredProjects.map((project) => (
-              <div
-                key={project.title}
-                className="group overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="mb-2 text-sm font-semibold text-brand">{project.category}</div>
-                  <h3 className="mb-2 font-bold text-black">{project.title}</h3>
-                  <p className="text-sm text-muted-foreground">{project.location}</p>
-                </div>
-              </div>
-            ))}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-10">
+            {featuredCaseStudies.map((project) => {
+              const Icon = categoryIcons[project.category];
+              const brandThumb = project.image.includes("pcl-mark");
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="group block w-[min(100%,360px)] shrink-0 overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className={cn(
+                        "transition-transform duration-300 group-hover:scale-105",
+                        brandThumb ? "object-contain object-center p-8" : "object-cover"
+                      )}
+                    />
+                  </div>
+                  <div className="p-6">
+                    <div className="mb-3 flex items-center gap-2">
+                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                      <span className="text-sm font-semibold text-brand">{project.categoryLabel}</span>
+                    </div>
+                    <h3 className="mb-2 text-lg font-bold text-black">{project.title}</h3>
+                    <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
+                    <div className="flex items-center justify-between border-t border-border pt-4 text-sm text-muted-foreground">
+                      <span>{project.location}</span>
+                      <span className="font-medium text-brand">View case study →</span>
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="mt-12 text-center">
@@ -261,14 +280,14 @@ export function PageHome() {
           <div className="text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Ready to Start Your Project?</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
-              Contact our team today to discuss your industrial contracting requirements and receive a comprehensive
-              project assessment.
+              Get in touch with our team today to discuss your industrial contracting requirements and receive a
+              comprehensive project assessment.
             </p>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
-              Contact Us Today
+              Get in touch
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

@@ -10,7 +10,7 @@ export function PageContact() {
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Contact Us</h1>
+            <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Get in touch</h1>
             <p className="text-xl text-gray-300">
               Every industrial project is different. The best next step is a conversation so we can understand your
               site, programme, and constraints, and recommend the right approach.

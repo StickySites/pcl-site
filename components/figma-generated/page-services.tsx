@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, Hammer, Shield, Sparkles, Wrench } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const services = [
   {
@@ -92,54 +93,67 @@ export function PageServices() {
 
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="space-y-16">
-            {services.map((service, index) => (
-              <div
-                key={service.title}
-                className={`grid gap-8 lg:grid-cols-2 lg:gap-12 ${index % 2 === 1 ? "lg:flex-row-reverse" : ""}`}
-              >
-                <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                  <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-brand">
-                    <service.icon className="h-8 w-8 text-brand-foreground" />
+          <div className="flex flex-col gap-20 sm:gap-24 lg:gap-28">
+            {services.map((service, index) => {
+              const imageOnLeft = index % 2 === 1;
+              return (
+                <article
+                  key={service.title}
+                  className={cn(
+                    "grid gap-10 rounded-2xl border p-6 shadow-sm sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-14 lg:p-10",
+                    imageOnLeft
+                      ? "border-border/80 bg-muted/50 ring-1 ring-black/[0.04]"
+                      : "border-border bg-white ring-1 ring-black/[0.06]"
+                  )}
+                >
+                  <div className={imageOnLeft ? "lg:order-2" : undefined}>
+                    <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-lg bg-brand">
+                      <service.icon className="h-8 w-8 text-brand-foreground" />
+                    </div>
+                    <h2 className="mb-4 text-3xl font-bold text-black">{service.title}</h2>
+                    <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-black">What we do</h3>
+                    <p className="mb-7 text-lg leading-relaxed text-muted-foreground">{service.description}</p>
+
+                    <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-black">
+                      What this service covers
+                    </h3>
+                    <ul className="mb-8 space-y-2.5">
+                      {service.coverage.map((line) => (
+                        <li key={line} className="flex gap-3 text-sm text-black">
+                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
+                          <span>{line}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <Link
+                      href={service.href}
+                      className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                    >
+                      Learn more
+                      <ArrowRight className="h-5 w-5" />
+                    </Link>
                   </div>
-                  <h2 className="mb-4 text-3xl font-bold text-black">{service.title}</h2>
-                  <h3 className="mb-2 text-sm font-semibold uppercase tracking-wide text-black">What we do</h3>
-                  <p className="mb-6 text-lg text-muted-foreground">{service.description}</p>
 
-                  <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-black">
-                    What this service covers
-                  </h3>
-                  <ul className="mb-6 space-y-2">
-                    {service.coverage.map((line) => (
-                      <li key={line} className="flex gap-3 text-sm text-black">
-                        <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand" aria-hidden />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Link
-                    href={service.href}
-                    className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
-                  >
-                    Learn more
-                    <ArrowRight className="h-5 w-5" />
-                  </Link>
-                </div>
-
-                <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
-                    <Image
-                      src={`https://images.unsplash.com/photo-${service.imageId}?w=800&q=80`}
-                      alt={service.title}
-                      fill
-                      sizes="(min-width: 1024px) 50vw, 100vw"
-                      className="object-cover"
-                    />
+                  <div className={imageOnLeft ? "lg:order-1" : undefined}>
+                    <div
+                      className={cn(
+                        "relative aspect-[4/3] overflow-hidden rounded-xl shadow-md",
+                        imageOnLeft ? "ring-1 ring-black/10" : "ring-1 ring-black/[0.07]"
+                      )}
+                    >
+                      <Image
+                        src={`https://images.unsplash.com/photo-${service.imageId}?w=800&q=80`}
+                        alt={service.title}
+                        fill
+                        sizes="(min-width: 1024px) 50vw, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -155,7 +169,7 @@ export function PageServices() {
               href="/contact"
               className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
-              Contact PCL
+              Get in touch
               <ArrowRight className="h-5 w-5" />
             </Link>
           </div>

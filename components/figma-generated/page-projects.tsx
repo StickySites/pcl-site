@@ -1,8 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { Building2, Factory, HardHat, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+import Link from "next/link";
+import { Building2, Factory, HardHat, ShieldCheck, Sparkles } from "lucide-react";
 import { useState } from "react";
+import type { CaseStudy, CaseStudyCategory } from "@/lib/case-studies";
+import { caseStudies } from "@/lib/case-studies";
+import { cn } from "@/lib/utils";
 
 const categories = [
   { id: "all", name: "All Projects" },
@@ -11,85 +15,21 @@ const categories = [
   { id: "refurbishment", name: "Refurbishment" },
   { id: "enabling", name: "Enabling Works" },
   { id: "remediation", name: "Remediation" }
-];
+] as const;
 
-const projects = [
-  {
-    id: 1,
-    title: "Industrial Warehouse Demolition",
-    category: "demolition",
-    categoryLabel: "Demolition",
-    location: "Manchester",
-    duration: "8 weeks",
-    description:
-      "Complete demolition of 50,000 sq ft industrial warehouse including hazardous material removal.",
-    image: "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80",
-    icon: Factory
-  },
-  {
-    id: 2,
-    title: "Commercial Office Refurbishment",
-    category: "refurbishment",
-    categoryLabel: "Refurbishment",
-    location: "London",
-    duration: "12 weeks",
-    description: "Full interior refurbishment of 30,000 sq ft office space with minimal operational disruption.",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-    icon: Building2
-  },
-  {
-    id: 3,
-    title: "Hospital Asbestos Remediation",
-    category: "asbestos",
-    categoryLabel: "Asbestos Removal",
-    location: "Birmingham",
-    duration: "6 weeks",
-    description:
-      "Licensed asbestos removal from occupied hospital facility with stringent infection control protocols.",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80",
-    icon: ShieldCheck
-  },
-  {
-    id: 4,
-    title: "Retail Park Enabling Works",
-    category: "enabling",
-    categoryLabel: "Enabling Works",
-    location: "Leeds",
-    duration: "10 weeks",
-    description: "Site preparation and structural alterations for major retail development.",
-    image: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80",
-    icon: HardHat
-  },
-  {
-    id: 5,
-    title: "Manufacturing Facility Strip Out",
-    category: "demolition",
-    categoryLabel: "Demolition",
-    location: "Sheffield",
-    duration: "5 weeks",
-    description:
-      "Complete strip out of former manufacturing facility including machinery removal and disposal.",
-    image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=800&q=80",
-    icon: Wrench
-  },
-  {
-    id: 6,
-    title: "Laboratory remediation",
-    category: "remediation",
-    categoryLabel: "Remediation",
-    location: "Cambridge",
-    duration: "4 weeks",
-    description: "Specialist remediation, decontamination, and asbestos removal from a research laboratory facility.",
-    image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
-    icon: Sparkles
-  }
-];
+const categoryIcons: Record<CaseStudyCategory, typeof Building2> = {
+  asbestos: ShieldCheck,
+  demolition: Factory,
+  refurbishment: Building2,
+  enabling: HardHat,
+  remediation: Sparkles
+};
 
 export function PageProjects() {
-  const [activeCategory, setActiveCategory] = useState("all");
+  const [activeCategory, setActiveCategory] = useState<(typeof categories)[number]["id"]>("all");
 
-  const filteredProjects =
-    activeCategory === "all" ? projects : projects.filter((project) => project.category === activeCategory);
+  const filteredProjects: CaseStudy[] =
+    activeCategory === "all" ? [...caseStudies] : caseStudies.filter((project) => project.category === activeCategory);
 
   return (
     <>
@@ -127,34 +67,42 @@ export function PageProjects() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {filteredProjects.map((project) => (
-              <div
-                key={project.id}
-                className="group overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden">
-                  <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-6">
-                  <div className="mb-3 flex items-center gap-2">
-                    <project.icon className="h-5 w-5 text-brand" />
-                    <span className="text-sm font-semibold text-brand">{project.categoryLabel}</span>
+            {filteredProjects.map((project) => {
+              const Icon = categoryIcons[project.category];
+              const brandThumb = project.image.includes("pcl-mark");
+              return (
+                <Link
+                  key={project.slug}
+                  href={`/projects/${project.slug}`}
+                  className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                >
+                  <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                    <Image
+                      src={project.image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                      className={cn(
+                        "transition-transform duration-300 group-hover:scale-105",
+                        brandThumb ? "object-contain object-center p-8" : "object-cover"
+                      )}
+                    />
                   </div>
-                  <h3 className="mb-2 font-bold text-black">{project.title}</h3>
-                  <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
-                  <div className="flex items-center justify-between border-t border-border pt-4 text-sm text-muted-foreground">
-                    <span>{project.location}</span>
-                    <span>{project.duration}</span>
+                  <div className="p-6">
+                    <div className="mb-3 flex items-center gap-2">
+                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                      <span className="text-sm font-semibold text-brand">{project.categoryLabel}</span>
+                    </div>
+                    <h2 className="mb-2 text-lg font-bold text-black">{project.title}</h2>
+                    <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
+                    <div className="flex items-center justify-between border-t border-border pt-4 text-sm text-muted-foreground">
+                      <span>{project.location}</span>
+                      <span className="font-medium text-brand">View case study →</span>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                </Link>
+              );
+            })}
           </div>
 
           {filteredProjects.length === 0 ? (

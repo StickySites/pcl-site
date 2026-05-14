@@ -14,11 +14,11 @@ export const siteContact = {
       "https://www.google.com/maps/search/?api=1&query=Unit+5+Woodside+Industrial+Estate+Epping+CM16+6LJ"
   },
   /**
-   * Suggested public-facing hours (matches Mon–Fri 9–5; weekend closed).
+   * Suggested public-facing hours (Mon–Fri 9–5).
    * Site visits and on-site work are scheduled per project.
    */
   hours: {
-    summary: "Monday–Friday, 9am–5pm · Saturday & Sunday closed",
+    summary: "Monday–Friday, 9am–5pm",
     note: "Standard office hours for enquiries. Site visits and project works are arranged separately."
   },
   social: {

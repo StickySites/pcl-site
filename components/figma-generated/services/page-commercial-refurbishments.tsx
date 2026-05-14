@@ -204,7 +204,7 @@ export function PageCommercialRefurbishments() {
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
-                Request a Quote
+                Get in touch
                 <ArrowRight className="h-5 w-5" />
               </Link>
               <Link
