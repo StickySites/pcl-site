@@ -8,31 +8,56 @@ const services = [
     title: "Asbestos Removal",
     description:
       "Licensed asbestos removal with full HSE compliance and comprehensive risk management.",
-    href: "/services/asbestos-removal"
+    href: "/services/asbestos-removal",
+    image: "/photos/Roofing_HalfandHalf_1178x718.png",
+    imageContain: false,
+    coverage: [
+      "Licensed removal & disposal",
+      "Surveys & air monitoring",
+      "Occupied & industrial sites",
+      "Documentation & clearance"
+    ]
   },
   {
     title: "Demolition & Strip Out",
     description:
       "Controlled demolition and complete strip-out services for commercial and industrial properties.",
-    href: "/services/demolition"
+    href: "/services/demolition",
+    image: "/brand/pcl-mark.png",
+    imageContain: true,
+    coverage: ["Soft strip & structural", "Waste segregation", "CDM & safety plans", "Neighbouring property protection"]
   },
   {
     title: "Enabling Works",
     description:
       "Site preparation and structural alterations to facilitate new construction and refurbishment.",
-    href: "/services/enabling-works"
+    href: "/services/enabling-works",
+    image: "/brand/pcl-logo-header.png",
+    imageContain: true,
+    coverage: ["Utility diversions", "Temporary works", "Ground & structural prep", "Handover to main works"]
   },
   {
     title: "Commercial Refurbishments",
     description:
       "Complete commercial interior refurbishment with minimal disruption to ongoing operations.",
-    href: "/services/commercial-refurbishments"
+    href: "/services/commercial-refurbishments",
+    image: "/brand/pcl-logo-footer.png",
+    imageContain: true,
+    coverage: ["Cat A / Cat B fit-out", "Phased & occupied sites", "MEP coordination", "Snagging & handover"]
   },
   {
-    title: "Decontamination",
+    title: "Remediation",
     description:
-      "Specialist cleaning and decontamination for hazardous materials and sensitive environments.",
-    href: "/services/decontamination"
+      "Industrial and environmental remediation and clearance for sensitive and regulated environments, including hazmat, biological risks, and laboratory-scale programmes.",
+    href: "/services/remediation",
+    image: "/photos/Roofing_HalfandHalf_1178x718.png",
+    imageContain: false,
+    coverage: [
+      "Hazmat & biological remediation",
+      "Laboratory & clinical settings",
+      "Infection control works",
+      "Validation & certification"
+    ]
   }
 ];
 
@@ -133,14 +158,44 @@ export function PageHome() {
               <Link
                 key={service.title}
                 href={service.href}
-                className="group rounded-lg border border-border bg-white p-6 transition-all hover:border-brand hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="group flex flex-col overflow-hidden rounded-lg border border-border bg-white transition-all hover:border-brand hover:shadow-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
-                <h3 className="mb-3 font-bold text-black group-hover:text-brand">{service.title}</h3>
-                <p className="mb-4 text-muted-foreground">{service.description}</p>
-                <span className="inline-flex items-center gap-2 font-semibold text-brand">
-                  Learn More
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </span>
+                <div
+                  className={`relative aspect-[16/10] w-full shrink-0 overflow-hidden bg-muted ${
+                    service.imageContain ? "p-6 sm:p-8" : ""
+                  }`}
+                >
+                  <Image
+                    src={service.image}
+                    alt=""
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className={
+                      service.imageContain
+                        ? "object-contain object-center"
+                        : "object-cover transition-transform duration-300 group-hover:scale-105"
+                    }
+                  />
+                </div>
+                <div className="flex flex-1 flex-col p-6">
+                  <h3 className="mb-3 font-bold text-black group-hover:text-brand">{service.title}</h3>
+                  <p className="mb-4 text-muted-foreground">{service.description}</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-black/70">Covers</p>
+                  <ul className="mb-4 space-y-1.5 text-sm text-muted-foreground">
+                    {service.coverage.map((line) => (
+                      <li key={line} className="flex gap-2">
+                        <span className="text-brand" aria-hidden>
+                          ·
+                        </span>
+                        <span>{line}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="mt-auto inline-flex items-center gap-2 font-semibold text-brand">
+                    Learn More
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

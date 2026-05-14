@@ -21,7 +21,7 @@ const values = [
   {
     icon: Target,
     title: "Client Focus",
-    description: "Tailored solutions that meet specific project requirements while minimizing operational disruption."
+    description: "Tailored solutions that meet specific project requirements while minimising operational disruption."
   }
 ];
 
@@ -62,10 +62,10 @@ export function PageAbout() {
                 <p>
                   Our journey began with a simple mission: to provide professional, safety-first industrial contracting
                   services that clients can rely on. Today, we deliver comprehensive solutions spanning asbestos
-                  removal, demolition, enabling works, commercial refurbishments, and specialist decontamination.
+                  removal, demolition, enabling works, commercial refurbishments, and remediation.
                 </p>
                 <p>
-                  Every project we undertake is guided by our core principle—safety is non-negotiable. This commitment
+                  Every project we undertake is guided by our core principle: safety is non-negotiable. This commitment
                   has earned us the trust of major commercial and industrial clients who depend on our expertise to
                   deliver challenging projects on time, within budget, and to the highest standards.
                 </p>
@@ -137,12 +137,12 @@ export function PageAbout() {
               <h2 className="mb-6 text-3xl font-bold text-black">Safety Culture</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  At PCL Limited, safety is embedded in our organizational culture. Every team member receives
+                  At PCL Limited, safety is embedded in our organisational culture. Every team member receives
                   comprehensive training, and our rigorous safety protocols exceed industry requirements.
                 </p>
                 <p>
                   We maintain zero-tolerance for safety shortcuts. Our HSE management system ensures that every project
-                  phase—from initial planning through final handover—is executed with meticulous attention to risk
+                  phase, from initial planning through final handover, is executed with meticulous attention to risk
                   management and regulatory compliance.
                 </p>
                 <p>
@@ -152,7 +152,7 @@ export function PageAbout() {
               </div>
               <div className="mt-6 rounded-lg border-l-4 border-brand bg-muted p-6">
                 <p className="font-semibold text-black">
-                  &ldquo;Safety isn&apos;t just a priority—it&apos;s our fundamental operating principle.&rdquo;
+                  &ldquo;Safety isn&apos;t just a priority; it&apos;s our fundamental operating principle.&rdquo;
                 </p>
               </div>
             </div>

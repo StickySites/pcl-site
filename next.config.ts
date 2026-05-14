@@ -8,6 +8,15 @@ const nextConfig: NextConfig = {
   turbopack: {
     root: projectRoot
   },
+  async redirects() {
+    return [
+      {
+        source: "/services/decontamination",
+        destination: "/services/remediation",
+        permanent: true
+      }
+    ];
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "cdn.sanity.io" },

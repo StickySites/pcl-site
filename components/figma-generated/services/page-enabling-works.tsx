@@ -41,6 +41,13 @@ const services = [
   "Hoarding & Site Security"
 ];
 
+const serviceCoverage = [
+  "Structural openings, propping & alterations",
+  "Utility diversions & protection",
+  "Groundworks, hoarding & site logistics",
+  "Temporary works design interfaces"
+];
+
 export function PageEnablingWorks() {
   return (
     <>
@@ -78,7 +85,7 @@ export function PageEnablingWorks() {
                   removing constraints and creating opportunities.
                 </p>
                 <p>
-                  We specialize in complex structural alterations including load-bearing wall removal, floor openings,
+                  We specialise in complex structural alterations including load-bearing wall removal, floor openings,
                   facade retention, and temporary support systems. Our engineers work closely with design teams to
                   deliver solutions that meet structural, programmatic, and budgetary requirements.
                 </p>
@@ -88,6 +95,17 @@ export function PageEnablingWorks() {
                   follow-on contractors.
                 </p>
               </div>
+              <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
+                What this service covers
+              </h3>
+              <ul className="space-y-2">
+                {serviceCoverage.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-black">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="relative">
@@ -163,7 +181,7 @@ export function PageEnablingWorks() {
                 <p>
                   All structural alterations are conducted under Building Control approval with comprehensive monitoring
                   of adjacent structures. We implement vibration monitoring, crack surveys, and protective measures for
-                  neighboring properties.
+                  neighbouring properties.
                 </p>
                 <p>
                   Our utility coordination includes liaison with all providers, NRSWA compliance for streetworks, and

@@ -7,12 +7,11 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { brandImages } from "@/lib/brand";
 
-const navigation = [
+const primaryNav = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Services", href: "/services" },
-  { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" }
+  { name: "Projects", href: "/projects" }
 ];
 
 export function SiteHeader() {
@@ -54,22 +53,22 @@ export function SiteHeader() {
           <Link href="/" className="flex min-w-0 items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
             {logoFailed ? (
               <>
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand">
-                  <span className="text-xl font-bold text-brand-foreground">P</span>
+                <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-brand">
+                  <span className="text-2xl font-bold text-brand-foreground">P</span>
                 </div>
                 <div className="flex min-w-0 flex-col">
-                  <span className="font-bold leading-tight text-black">PCL Limited</span>
-                  <span className="text-xs leading-tight text-muted-foreground">Pier Contractors Limited</span>
+                  <span className="text-lg font-bold leading-tight text-black">PCL Limited</span>
+                  <span className="text-sm leading-tight text-muted-foreground">Pier Contractors Limited</span>
                 </div>
               </>
             ) : (
-              <span className="relative block h-9 w-44 shrink-0 sm:h-10 sm:w-52">
+              <span className="relative block h-12 w-56 shrink-0 sm:h-16 sm:w-80">
                 <Image
                   src={brandImages.headerLogo}
-                  alt="PCL Limited — Pier Contractors Limited"
+                  alt="PCL Limited, Pier Contractors Limited"
                   fill
                   className="object-contain object-left"
-                  sizes="(max-width: 640px) 176px, 208px"
+                  sizes="(max-width: 640px) 224px, 320px"
                   priority
                   onError={() => setLogoFailed(true)}
                 />
@@ -78,20 +77,30 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <div className="hidden lg:flex lg:gap-x-8">
-          {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`relative px-1 py-2 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand ${
-                isActive(item.href)
-                  ? "text-brand after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-brand"
-                  : "text-black hover:text-brand"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="hidden items-center gap-x-6 lg:flex">
+          <div className="flex gap-x-8">
+            {primaryNav.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`relative px-1 py-2 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand ${
+                  isActive(item.href)
+                    ? "text-brand after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-brand"
+                    : "text-black hover:text-brand"
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <Link
+            href="/contact"
+            className={`shrink-0 rounded-full border-2 border-white bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
+              isActive("/contact") ? "ring-2 ring-brand ring-offset-2 ring-offset-white" : "hover:bg-brand-dark"
+            }`}
+          >
+            Contact us
+          </Link>
         </div>
 
         <div className="flex lg:hidden">
@@ -109,11 +118,11 @@ export function SiteHeader() {
       {mobileMenuOpen ? (
         <div className="lg:hidden">
           <div className="space-y-1 border-t border-border px-4 pb-4 pt-2">
-            {navigation.map((item) => (
+            {primaryNav.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block rounded-md px-3 py-3 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
+                className={`block rounded-md px-3 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
                   isActive(item.href)
                     ? "bg-brand text-brand-foreground"
                     : "text-black hover:bg-muted hover:text-brand"
@@ -122,6 +131,12 @@ export function SiteHeader() {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/contact"
+              className="mt-3 block rounded-full border-2 border-white bg-brand px-4 py-3 text-center text-sm font-semibold text-brand-foreground shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            >
+              Contact us
+            </Link>
           </div>
         </div>
       ) : null}

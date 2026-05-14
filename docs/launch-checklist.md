@@ -1,6 +1,6 @@
 # Launch Checklist (Starter)
 
-- Brand tokens configured (colors/fonts/logo variants)
+- Brand tokens configured (colours/fonts/logo variants)
 - Page docs populated in CMS
 - Required section keys present
 - SEO defaults + page snippets configured

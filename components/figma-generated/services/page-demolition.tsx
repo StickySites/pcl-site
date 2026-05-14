@@ -21,7 +21,7 @@ const processSteps = [
   {
     title: "Controlled Demolition",
     description:
-      "Systematic structural demolition using appropriate plant and machinery. Continuous monitoring ensures neighboring properties remain protected."
+      "Systematic structural demolition using appropriate plant and machinery. Continuous monitoring ensures neighbouring properties remain protected."
   },
   {
     title: "Waste Processing & Site Clearance",
@@ -39,6 +39,13 @@ const capabilities = [
   "Facade Retention",
   "On-Site Crushing",
   "Waste Segregation & Recycling"
+];
+
+const serviceCoverage = [
+  "Soft strip, structural & façade retention",
+  "Dust, noise & vibration controls",
+  "Segregation, recycling & licensed disposal",
+  "CDM coordination & utility isolations"
 ];
 
 export function PageDemolition() {
@@ -60,7 +67,7 @@ export function PageDemolition() {
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Demolition & Strip Out</h1>
             <p className="text-xl text-gray-300">
               Controlled demolition and complete strip-out services for commercial and industrial properties. From
-              selective demolition to complete building teardown, delivered with precision and safety.
+              selective demolition to full building demolition, delivered with precision and safety.
             </p>
           </div>
         </div>
@@ -79,14 +86,25 @@ export function PageDemolition() {
                 </p>
                 <p>
                   Our experienced team uses modern plant and equipment to execute controlled demolition projects. We
-                  work to minimize dust, noise, and vibration while maximizing material recovery for recycling and reuse.
+                  work to minimise dust, noise, and vibration while maximising material recovery for recycling and reuse.
                 </p>
                 <p>
                   Every demolition project begins with thorough structural assessment and detailed planning. We
-                  coordinate utility disconnections, implement comprehensive safety measures, and ensure neighboring
+                  coordinate utility disconnections, implement comprehensive safety measures, and ensure neighbouring
                   properties remain fully protected throughout the works.
                 </p>
               </div>
+              <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
+                What this service covers
+              </h3>
+              <ul className="space-y-2">
+                {serviceCoverage.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-black">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="relative">
@@ -162,10 +180,10 @@ export function PageDemolition() {
                 </p>
                 <p>
                   We implement full exclusion zones, dust suppression systems, and vibration monitoring to protect
-                  neighboring properties. All works are coordinated with local authorities and utility companies.
+                  neighbouring properties. All works are coordinated with local authorities and utility companies.
                 </p>
                 <p>
-                  Our demolition projects maintain excellent environmental performance through maximized recycling,
+                  Our demolition projects maintain excellent environmental performance through maximised recycling,
                   proper waste classification, and licensed disposal of any hazardous materials encountered.
                 </p>
               </div>

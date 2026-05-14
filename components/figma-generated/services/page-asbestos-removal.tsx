@@ -21,7 +21,7 @@ const processSteps = [
   {
     title: "Safe Removal & Disposal",
     description:
-      "Licensed removal by trained operatives in full PPE. All asbestos waste is double-bagged, labeled, and transported to licensed disposal facilities."
+      "Licensed removal by trained operatives in full PPE. All asbestos waste is double-bagged, labelled, and transported to licensed disposal facilities."
   },
   {
     title: "Clearance Testing & Certification",
@@ -39,6 +39,13 @@ const safetyFeatures = [
   "Full PPE & Respiratory Protection",
   "Licensed Waste Disposal",
   "Comprehensive Insurance"
+];
+
+const serviceCoverage = [
+  "Licensed removal & waste consignment",
+  "Surveys, air monitoring & four-stage clearance",
+  "Type 1–3 ACMs in occupied & industrial buildings",
+  "Method statements, RAMS & client reporting"
 ];
 
 export function PageAsbestosRemoval() {
@@ -89,6 +96,17 @@ export function PageAsbestosRemoval() {
                   ensure complete safety throughout the removal process.
                 </p>
               </div>
+              <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
+                What this service covers
+              </h3>
+              <ul className="space-y-2">
+                {serviceCoverage.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-black">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="relative">

@@ -10,12 +10,12 @@ export const metadata: Metadata = {
     template: "%s | PCL Limited"
   },
   description:
-    "PCL Limited — professional industrial contractors: asbestos removal, demolition, enabling works, commercial refurbishments, and specialist decontamination."
+    "PCL Limited provides professional industrial contracting, including asbestos removal, demolition, enabling works, commercial refurbishments, and remediation."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <body className={inter.variable}>{children}</body>
     </html>
   );

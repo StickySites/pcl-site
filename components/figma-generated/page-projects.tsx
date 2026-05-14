@@ -9,7 +9,8 @@ const categories = [
   { id: "asbestos", name: "Asbestos Removal" },
   { id: "demolition", name: "Demolition" },
   { id: "refurbishment", name: "Refurbishment" },
-  { id: "enabling", name: "Enabling Works" }
+  { id: "enabling", name: "Enabling Works" },
+  { id: "remediation", name: "Remediation" }
 ];
 
 const projects = [
@@ -73,12 +74,12 @@ const projects = [
   },
   {
     id: 6,
-    title: "Laboratory Decontamination",
-    category: "asbestos",
-    categoryLabel: "Decontamination",
+    title: "Laboratory remediation",
+    category: "remediation",
+    categoryLabel: "Remediation",
     location: "Cambridge",
     duration: "4 weeks",
-    description: "Specialist decontamination and asbestos removal from research laboratory facility.",
+    description: "Specialist remediation, decontamination, and asbestos removal from a research laboratory facility.",
     image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80",
     icon: Sparkles
   }

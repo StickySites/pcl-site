@@ -1,4 +1,4 @@
-# PCL Limited — marketing website
+# PCL Limited: marketing website
 
 Next.js site for **PCL Limited** (industrial contracting), implemented from the Figma Make handoff. The app uses **local-first** content for marketing pages (static React views). **Sanity** remains available for CMS-backed content and Studio at `/studio` when you configure it.
 
@@ -7,7 +7,7 @@ Next.js site for **PCL Limited** (industrial contracting), implemented from the 
 - **Next.js** (App Router)
 - **Tailwind CSS** + brand tokens (`brand`, `brand-dark`, `muted`)
 - **lucide-react** (icons aligned with the Make export)
-- **Sanity** (optional — schema and Studio scaffold included)
+- **Sanity** (optional; schema and Studio scaffold included)
 
 ## Scripts
 
@@ -36,10 +36,10 @@ To use Sanity for `getPageContent` and Studio, set `CONTENT_SOURCE=sanity` and f
 | `app/studio/` | Sanity Studio |
 | `app/not-found.tsx` | Global 404 with site chrome |
 | `components/figma-generated/` | UI ported from Figma Make (source of visual structure) |
-| `components/sections/` | Thin wrappers — route files import these, not raw `figma-generated` components |
+| `components/sections/` | Thin wrappers: route files import these, not raw `figma-generated` components |
 | `components/primitives/` | Shared shell (e.g. header + footer layout) |
 | `components/ui/` | shadcn-style primitives |
-| `public/brand/` | Header/footer logos (`pcl-logo-header.png`, `pcl-logo-footer.png`) — see folder README |
+| `public/brand/` | Header/footer logos (`pcl-logo-header.png`, `pcl-logo-footer.png`). See folder README |
 | `lib/content/` | Local + Sanity content helpers and page contract |
 | `sanity/` | Schema types |
 

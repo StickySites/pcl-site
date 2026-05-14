@@ -41,6 +41,13 @@ const capabilities = [
   "Out-of-Hours Working"
 ];
 
+const serviceCoverage = [
+  "Cat A / Cat B & tenant fit-out",
+  "Phased works in occupied buildings",
+  "Finishes, partitions & ceilings",
+  "Quality plans, commissioning & O&M handover"
+];
+
 export function PageCommercialRefurbishments() {
   return (
     <>
@@ -80,7 +87,7 @@ export function PageCommercialRefurbishments() {
                 <p>
                   Our expertise in occupied building refurbishment allows businesses to maintain operations during works.
                   We implement carefully planned phasing, out-of-hours working, and noise/dust control measures to
-                  minimize disruption.
+                  minimise disruption.
                 </p>
                 <p>
                   Every refurbishment project is managed with meticulous attention to program, quality, and budget. We
@@ -88,6 +95,17 @@ export function PageCommercialRefurbishments() {
                   building regulations and lease requirements.
                 </p>
               </div>
+              <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
+                What this service covers
+              </h3>
+              <ul className="space-y-2">
+                {serviceCoverage.map((item) => (
+                  <li key={item} className="flex gap-3 text-sm text-black">
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
             <div className="relative">
@@ -104,7 +122,7 @@ export function PageCommercialRefurbishments() {
                 <h3 className="mb-2 font-bold text-black">Minimal Disruption</h3>
                 <p className="text-sm text-muted-foreground">
                   Our phased approach and flexible working patterns allow businesses to continue operations during
-                  refurbishment, minimizing downtime and maintaining productivity.
+                  refurbishment, minimising downtime and maintaining productivity.
                 </p>
               </div>
             </div>

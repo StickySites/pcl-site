@@ -20,7 +20,7 @@ export function HomeHeroBackground() {
         videoRef.current?.pause();
       } else {
         void videoRef.current?.play().catch(() => {
-          /* autoplay blocked — poster / first frame still visible */
+          /* autoplay blocked; poster / first frame still visible */
         });
       }
     };

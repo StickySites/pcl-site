@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* PCL brand — token parity with Figma Make theme.css */
+    /* PCL brand: token parity with Figma Make theme.css */
     --brand: #b70004;
     --brand-dark: #8a0003;
     --background: 0 0% 100%;
