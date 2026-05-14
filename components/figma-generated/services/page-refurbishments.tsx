@@ -1,22 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, CheckCircle2 } from "lucide-react";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { refurbishmentFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
   {
     title: "Initial Consultation & Survey",
     description:
-      "Detailed site survey and client briefing to understand requirements, constraints, and operational needs. We assess existing conditions and identify opportunities."
+      "Detailed site survey and client briefing to understand requirements, constraints, and how the building is used—whether offices, education, housing, or public-facing facilities. We assess existing conditions and identify opportunities."
   },
   {
     title: "Design Coordination & Planning",
     description:
-      "Collaboration with design teams to develop buildable solutions. We identify critical path items, phasing requirements, and coordination with ongoing operations."
+      "Collaboration with design teams to develop buildable solutions. We identify critical path items, phasing requirements, and coordination with ongoing operations, residents, or academic calendars where they apply."
   },
   {
     title: "Phased Strip-Out & Preparation",
     description:
-      "Systematic removal of existing fit-out with minimal disruption. Works are phased to maintain partial occupancy and business continuity where required."
+      "Systematic removal of existing fit-out with minimal disruption. Works are phased to maintain partial occupancy, teaching continuity, or decant routes where required."
   },
   {
     title: "Refurbishment Installation",
@@ -31,14 +33,15 @@ const processSteps = [
 ];
 
 const capabilities = [
-  "Office Fit-Outs",
-  "Retail Space Refurbishment",
-  "Occupied Building Works",
-  "Phased Refurbishment Programs",
-  "Cat A & Cat B Fit-Outs",
-  "M&E Coordination",
-  "Landlord & Tenant Works",
-  "Out-of-Hours Working"
+  "Education & campus programmes",
+  "Social housing & residential blocks",
+  "Office & workplace fit-out",
+  "Retail & leisure",
+  "Occupied & phased programmes",
+  "Cat A & Cat B fit-outs",
+  "M&E coordination",
+  "Landlord & tenant works",
+  "Out-of-hours & term-time sequencing"
 ];
 
 const serviceCoverage = [
@@ -48,7 +51,7 @@ const serviceCoverage = [
   "Quality plans, commissioning & O&M handover"
 ];
 
-export function PageCommercialRefurbishments() {
+export function PageRefurbishments() {
   return (
     <>
       <section className="relative bg-black py-16 sm:py-24">
@@ -58,16 +61,16 @@ export function PageCommercialRefurbishments() {
               Services
             </Link>
             <span>/</span>
-            <span className="text-white">Commercial Refurbishments</span>
+            <span className="text-white">Refurbishments</span>
           </div>
           <div className="mt-6 max-w-3xl">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-brand">
               <Building2 className="h-8 w-8 text-brand-foreground" />
             </div>
-            <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Commercial Refurbishments</h1>
+            <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Refurbishments</h1>
             <p className="text-xl text-gray-300">
-              Complete commercial interior refurbishment with minimal disruption to ongoing operations. We transform
-              spaces while you continue business as usual.
+              Interior refurbishment and fit-out for workplaces, education, social housing, and public buildings—with
+              phasing and controls that keep sites operational wherever possible.
             </p>
           </div>
         </div>
@@ -80,19 +83,20 @@ export function PageCommercialRefurbishments() {
               <h2 className="mb-6 text-3xl font-bold text-black">What We Do</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  PCL Limited delivers comprehensive commercial refurbishment services for offices, retail spaces, and
-                  commercial properties. From complete Cat A shell finishes to bespoke Cat B fit-outs, we create
-                  functional, attractive spaces that meet modern workplace standards.
+                  PCL Limited delivers refurbishment programmes across offices, retail, higher and further education,
+                  schools, social housing, and wider residential blocks, plus civic and institutional estates. From Cat A
+                  shell readiness to bespoke Cat B fit-out, we create durable, compliant environments aligned to how each
+                  building is used.
                 </p>
                 <p>
-                  Our expertise in occupied building refurbishment allows businesses to maintain operations during works.
-                  We implement carefully planned phasing, out-of-hours working, and noise/dust control measures to
-                  minimise disruption.
+                  Our expertise in occupied buildings means we can sequence works around teaching terms, resident
+                  decants, out-of-hours windows, and operational priorities. We plan segregation, noise and dust controls,
+                  and access routes so day-to-day activity can continue safely alongside the contract.
                 </p>
                 <p>
-                  Every refurbishment project is managed with meticulous attention to program, quality, and budget. We
-                  coordinate all trades, manage interfaces with landlords and tenants, and ensure works comply with
-                  building regulations and lease requirements.
+                  Every refurbishment is managed with clear attention to programme, quality, and budget. We coordinate
+                  trades, manage interfaces with landlords, tenants, and managing agents, and ensure outputs meet Building
+                  Regulations, safeguarding requirements, and lease or funding conditions where they apply.
                 </p>
               </div>
               <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
@@ -111,18 +115,18 @@ export function PageCommercialRefurbishments() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80"
-                  alt="Modern commercial office interior"
+                  src="/photos/BareWall.jpg"
+                  alt="Refurbished interior with modern finishes"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
               </div>
               <div className="mt-6 rounded-lg bg-muted p-6">
-                <h3 className="mb-2 font-bold text-black">Minimal Disruption</h3>
+                <h3 className="mb-2 font-bold text-black">Minimal disruption</h3>
                 <p className="text-sm text-muted-foreground">
-                  Our phased approach and flexible working patterns allow businesses to continue operations during
-                  refurbishment, minimising downtime and maintaining productivity.
+                  Phased delivery and flexible working patterns help occupiers, residents, and campus users stay on site
+                  where the programme allows—reducing downtime while protecting safety and quality.
                 </p>
               </div>
             </div>
@@ -157,9 +161,9 @@ export function PageCommercialRefurbishments() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div className="rounded-lg bg-black p-8 text-white">
-              <h3 className="mb-4 text-2xl font-bold">Refurbishment Capabilities</h3>
+              <h3 className="mb-4 text-2xl font-bold">Refurbishment capabilities</h3>
               <p className="mb-6 text-gray-300">
-                Full-service commercial refurbishment from initial strip-out through final handover:
+                Full-service refurbishment from initial strip-out through final handover:
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {capabilities.map((capability) => (
@@ -172,19 +176,21 @@ export function PageCommercialRefurbishments() {
             </div>
 
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-black">Quality & Compliance</h2>
+              <h2 className="mb-6 text-3xl font-bold text-black">Quality & compliance</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  All refurbishment works are delivered to meet Building Regulations, CDM requirements, and lease
-                  covenants. We obtain necessary approvals from building control, landlords, and managing agents.
+                  Works are delivered to meet Building Regulations, CDM requirements, and lease or landlord covenants. We
+                  obtain necessary approvals from building control, estates teams, and managing agents, including
+                  safeguarding and resident engagement considerations on housing and education sites.
                 </p>
                 <p>
-                  Our quality management systems ensure consistent standards across all trades. Regular inspections,
-                  quality hold points, and comprehensive snagging procedures guarantee excellent finished quality.
+                  Our quality management systems ensure consistent standards across trades. Regular inspections, quality
+                  hold points, and structured snagging help deliver finished spaces that meet specification and handover
+                  expectations.
                 </p>
                 <p>
-                  We coordinate fire stopping, acoustic testing, and all necessary commissioning activities. Full O&M
-                  documentation and warranty packages are provided at project completion.
+                  We coordinate fire stopping, acoustic testing, and commissioning activities. Full O&M documentation and
+                  warranty packages are provided at project completion.
                 </p>
               </div>
             </div>
@@ -192,10 +198,15 @@ export function PageCommercialRefurbishments() {
         </div>
       </section>
 
+      <ServiceFaqSection
+        intro="Refurbishment delivery, phasing, quality, and how we keep your building operational where possible."
+        items={refurbishmentFaqItems}
+      />
+
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg bg-black p-8 text-center sm:p-12">
-            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Transform Your Commercial Space</h2>
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Transform your space</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
               Discuss your refurbishment requirements with our experienced project team.
             </p>
@@ -211,7 +222,7 @@ export function PageCommercialRefurbishments() {
                 href="/projects"
                 className="inline-flex items-center justify-center gap-2 rounded border-2 border-white bg-transparent px-8 py-4 font-semibold text-white transition-colors hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
-                View Related Projects
+                View related projects
               </Link>
             </div>
           </div>

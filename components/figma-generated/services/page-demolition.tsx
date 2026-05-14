@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Hammer } from "lucide-react";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { demolitionFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
   {
@@ -110,7 +112,7 @@ export function PageDemolition() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&q=80"
+                  src="/photos/Demolition.jpg"
                   alt="Controlled demolition in progress"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -191,6 +193,11 @@ export function PageDemolition() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection
+        intro="Practical questions on demolition, strip-out, controls, and how we plan work around your site."
+        items={demolitionFaqItems}
+      />
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

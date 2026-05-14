@@ -28,22 +28,22 @@ export const caseStudies: readonly CaseStudy[] = [
     title: "Royal Garden Hotel",
     pdfFileName: "Case Study Royal Garden Hotel.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Hotel refurbishment and fit-out works delivered with minimal disruption to operations.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/BareWall.jpg"
   },
   {
     slug: "heron-hall-academy",
     title: "Heron Hall Academy",
     pdfFileName: "Heron_Hall_Academy_Case_Study.pdf",
     category: "enabling",
-    categoryLabel: "Enabling Works",
+    categoryLabel: "Enabling Works & Structural Alterations",
     location: "London",
     duration: "Case study",
     description: "Enabling works and site preparation supporting an education campus programme.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/StripOut.jpg"
   },
   {
     slug: "hemel-hempstead-units-48-49",
@@ -54,18 +54,18 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "Hertfordshire",
     duration: "Case study",
     description: "Industrial strip-out and demolition scope on commercial units.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/Demolition.jpg"
   },
   {
     slug: "dr-marten-oxford-street",
     title: "Dr Marten, Oxford Street",
     pdfFileName: "Dr Marten Store, Oxford Street Case Study.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Retail fit-out and refurbishment on a high-footfall central London store.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/BareBones.jpg"
   },
   {
     slug: "barnwell",
@@ -76,18 +76,18 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "UK",
     duration: "Case study",
     description: "Licensed asbestos removal and associated works completed under controlled conditions.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/AsbestosRemovalImage_649x554.png"
   },
   {
     slug: "university-of-west-london",
     title: "University of West London",
     pdfFileName: "University of West London Case Study.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Higher education refurbishment delivered around academic schedules.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/BareWall.jpg"
   },
   {
     slug: "royal-mail-romford",
@@ -98,7 +98,7 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "Essex",
     duration: "Case study",
     description: "Industrial strip-out and structural enabling on a distribution site.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/InternalDemolition_649x554.png"
   },
   {
     slug: "ilford-county-high-school",
@@ -109,7 +109,7 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "London",
     duration: "Case study",
     description: "School estate works including licensed asbestos removal with safeguarding priorities.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/AsbestosRemovalImage_649x554.png"
   },
   {
     slug: "greenwich-painted-hall",
@@ -120,51 +120,51 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "London",
     duration: "Case study",
     description: "Heritage-sensitive remediation and specialist finishes within a landmark setting.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/Remediation.jpg"
   },
   {
     slug: "alexandra-palace",
     title: "Alexandra Palace",
     pdfFileName: "Alexandra_Palace_London_Case_Study.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Major venue refurbishment with coordination across complex stakeholder requirements.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/Roofing_HalfandHalf_1178x718.png"
   },
   {
     slug: "hemel-hempstead-units-23-24",
     title: "Units 23 & 24, Hemel Hempstead",
     pdfFileName: "Units 23 & 24 Hemel Hempstead Case Study.pdf",
     category: "enabling",
-    categoryLabel: "Enabling Works",
+    categoryLabel: "Enabling Works & Structural Alterations",
     location: "Hertfordshire",
     duration: "Case study",
     description: "Enabling works to prepare commercial units for redevelopment.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/StructualBars.jpg"
   },
   {
     slug: "goldsmiths-hall",
     title: "Goldsmiths' Hall",
     pdfFileName: "Case Study Goldsmiths Hall.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "High-specification refurbishment within a Grade I listed livery hall.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/BareBones.jpg"
   },
   {
     slug: "greenwich-maritime-naval-college",
     title: "Greenwich Maritime, Naval College",
     pdfFileName: "Greenwich Maritime, Naval College Case Study.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Heritage campus refurbishment with careful sequencing around public access.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/StructualBars.jpg"
   },
   {
     slug: "travis-perkins",
@@ -175,18 +175,18 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "UK",
     duration: "Case study",
     description: "Trade counter and yard strip-out with phased handover for reinstatement.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/Demolition.jpg"
   },
   {
     slug: "tuc-congress-house",
     title: "TUC Union Congress House",
     pdfFileName: "TUC Union Congress House Case Study.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "London",
     duration: "Case study",
     description: "Office and institutional refurbishment within a prominent central London HQ.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/PCLWelfareBox.jpg"
   },
   {
     slug: "the-fitzwimarc-school",
@@ -197,18 +197,18 @@ export const caseStudies: readonly CaseStudy[] = [
     location: "Essex",
     duration: "Case study",
     description: "School asbestos removal programme coordinated around term-time constraints.",
-    image: "/brand/pcl-mark.png"
+    image: "/photos/AsbestosRemovalImage_649x554.png"
   },
   {
     slug: "pinewood-studios",
     title: "Pinewood Studios",
     pdfFileName: "Case Study Pinewood Studios.pdf",
     category: "refurbishment",
-    categoryLabel: "Refurbishment",
+    categoryLabel: "Refurbishments",
     location: "Buckinghamshire",
     duration: "Case study",
     description: "Studio and production facility refurbishment with tight programme coordination.",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png"
+    image: "/photos/PCLWelfareBox.jpg"
   }
 ] as const;
 

@@ -1,0 +1,69 @@
+import Image from "next/image";
+
+type CredentialLogo = { src: string; alt: string };
+
+const credentialLogos: readonly CredentialLogo[] = [
+  { src: "/credentials/CHAS_Creditation.png", alt: "CHAS accreditation logo" },
+  { src: "/credentials/cyberessentials.png", alt: "Cyber Essentials certification logo" },
+  { src: "/credentials/BP_Creditation.png", alt: "Industry accreditation logo" },
+  { src: "/credentials/Ciro.png", alt: "Industry affiliation logo" },
+  { src: "/credentials/AccreditationImage1.png", alt: "Professional accreditation logo, badge one of three" },
+  { src: "/credentials/AccreditationImage2.png", alt: "Professional accreditation logo, badge two of three" },
+  { src: "/credentials/AccreditationImage3.png", alt: "Professional accreditation logo, badge three of three" }
+];
+
+function LogoCell({ logo }: { logo: CredentialLogo }) {
+  return (
+    <li className="list-none">
+      <div className="relative h-10 w-[6.75rem] shrink-0 transition duration-200 ease-out hover:-translate-y-0.5 sm:h-12 sm:w-[8rem] md:h-14 md:w-[9rem]">
+        <Image
+          src={logo.src}
+          alt={logo.alt}
+          fill
+          sizes="(max-width: 640px) 108px, (max-width: 768px) 128px, 144px"
+          className="object-contain object-center opacity-[0.82] grayscale transition duration-200 ease-out hover:opacity-100 hover:grayscale-0"
+        />
+      </div>
+    </li>
+  );
+}
+
+export function CertificationsStrip() {
+  return (
+    <section
+      className="border-y border-border bg-muted/45 py-7 sm:py-9"
+      aria-labelledby="accreditations-heading"
+    >
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2
+          id="accreditations-heading"
+          className="mb-6 text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:mb-7 sm:text-sm"
+        >
+          Accreditations &amp; certifications
+        </h2>
+        <div className="overflow-hidden motion-reduce:overflow-x-auto">
+          <ul
+            className="flex w-max list-none flex-nowrap items-center gap-x-8 sm:gap-x-10 animate-cert-marquee motion-reduce:mx-auto motion-reduce:w-max motion-reduce:max-w-full motion-reduce:animate-none motion-reduce:justify-center hover:[animation-play-state:paused] focus-within:[animation-play-state:paused]"
+          >
+            {credentialLogos.map((logo) => (
+              <LogoCell key={logo.src} logo={logo} />
+            ))}
+            {credentialLogos.map((logo) => (
+              <li key={`${logo.src}-marquee-repeat`} className="list-none motion-reduce:hidden" aria-hidden="true">
+                <div className="relative h-10 w-[6.75rem] shrink-0 sm:h-12 sm:w-[8rem] md:h-14 md:w-[9rem]">
+                  <Image
+                    src={logo.src}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 108px, (max-width: 768px) 128px, 144px"
+                    className="object-contain object-center opacity-[0.82] grayscale"
+                  />
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  );
+}

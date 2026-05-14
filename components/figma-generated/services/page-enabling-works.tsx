@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Wrench } from "lucide-react";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { enablingWorksFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
   {
     title: "Site Assessment & Planning",
     description:
-      "Comprehensive site survey identifying existing structures, services, and ground conditions. We develop detailed enabling works strategies aligned with project timelines."
+      "Comprehensive site survey identifying existing structures, services, and ground conditions. We develop detailed strategies for enabling works and structural alterations aligned with project timelines."
   },
   {
     title: "Utility Diversions & Protection",
@@ -80,9 +82,9 @@ export function PageEnablingWorks() {
               <h2 className="mb-6 text-3xl font-bold text-black">What We Do</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  PCL Limited provides comprehensive enabling works that prepare sites for major construction and
-                  refurbishment projects. Our services bridge the gap between existing conditions and new development,
-                  removing constraints and creating opportunities.
+                  PCL Limited provides comprehensive enabling works and structural alterations that prepare sites for major
+                  construction and refurbishment projects. Our services bridge the gap between existing conditions and new
+                  development, removing constraints and creating opportunities.
                 </p>
                 <p>
                   We specialise in complex structural alterations including load-bearing wall removal, floor openings,
@@ -90,9 +92,9 @@ export function PageEnablingWorks() {
                   deliver solutions that meet structural, programmatic, and budgetary requirements.
                 </p>
                 <p>
-                  Our enabling works encompass utility diversions, ground preparation, site clearance, and all necessary
-                  preliminary operations. We coordinate with multiple stakeholders to ensure seamless handover to
-                  follow-on contractors.
+                  Our work encompasses utility diversions, ground preparation, site clearance, structural modifications, and
+                  all necessary preliminary operations. We coordinate with multiple stakeholders to ensure seamless handover
+                  to follow-on contractors.
                 </p>
               </div>
               <h3 className="mb-3 mt-10 text-sm font-semibold uppercase tracking-wide text-black">
@@ -111,7 +113,7 @@ export function PageEnablingWorks() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=800&q=80"
+                  src="/photos/StructualBars.jpg"
                   alt="Site preparation and structural works"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
@@ -122,7 +124,7 @@ export function PageEnablingWorks() {
                 <h3 className="mb-2 font-bold text-black">Expert Coordination</h3>
                 <p className="text-sm text-muted-foreground">
                   We manage interfaces with structural engineers, utility providers, and follow-on contractors to ensure
-                  enabling works integrate seamlessly with overall project programs.
+                  enabling works and structural alterations integrate seamlessly with overall project programmes.
                 </p>
               </div>
             </div>
@@ -135,7 +137,8 @@ export function PageEnablingWorks() {
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold text-black sm:text-4xl">Our Process</h2>
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              A methodical approach to enabling works ensuring sites are properly prepared for main construction phases.
+              A methodical approach to enabling works and structural alterations, ensuring sites are properly prepared for
+              main construction phases.
             </p>
           </div>
 
@@ -157,9 +160,9 @@ export function PageEnablingWorks() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
-              <h2 className="mb-6 text-3xl font-bold text-black">Enabling Works Services</h2>
+              <h2 className="mb-6 text-3xl font-bold text-black">Scope of works</h2>
               <p className="mb-6 text-muted-foreground">
-                Comprehensive enabling works tailored to your development requirements:
+                Comprehensive enabling works and structural alterations tailored to your development requirements:
               </p>
               <div className="grid gap-3 sm:grid-cols-2">
                 {services.map((service) => (
@@ -175,7 +178,7 @@ export function PageEnablingWorks() {
               <h3 className="mb-4 text-2xl font-bold">Technical Excellence</h3>
               <div className="space-y-4 text-gray-300">
                 <p>
-                  Our enabling works are supported by experienced structural and civil engineers. We provide temporary
+                  Our delivery is supported by experienced structural and civil engineers. We provide temporary
                   works design, method statements, and full structural calculations where required.
                 </p>
                 <p>
@@ -193,10 +196,17 @@ export function PageEnablingWorks() {
         </div>
       </section>
 
+      <ServiceFaqSection
+        intro="How enabling works and structural alterations are scoped, handed over, and coordinated with your wider construction programme."
+        items={enablingWorksFaqItems}
+      />
+
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg bg-black p-8 text-center sm:p-12">
-            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Discuss Your Enabling Works Requirements</h2>
+            <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
+              Plan Your Enabling Works & Structural Alterations
+            </h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
               Get in touch with our technical team to discuss how we can prepare your site for successful development.
             </p>

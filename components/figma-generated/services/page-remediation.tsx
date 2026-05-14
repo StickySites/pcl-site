@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { remediationFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
   {
@@ -110,8 +112,17 @@ export function PageRemediation() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=800&q=80"
-                  alt="Remediation team on site"
+                  src="/photos/Remediation.jpg"
+                  alt="Remediation works on site"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-lg shadow-md ring-1 ring-black/[0.06]">
+                <Image
+                  src="/photos/Ventilation.png"
+                  alt="Engineered ventilation and air control for containment"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
@@ -173,6 +184,11 @@ export function PageRemediation() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection
+        intro="Remediation scope, containment, validation, and how we align with regulated or sensitive environments."
+        items={remediationFaqItems}
+      />
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -14,15 +14,16 @@ const nextConfig: NextConfig = {
         source: "/services/decontamination",
         destination: "/services/remediation",
         permanent: true
+      },
+      {
+        source: "/services/commercial-refurbishments",
+        destination: "/services/refurbishments",
+        permanent: true
       }
     ];
   },
   images: {
-    remotePatterns: [
-      { protocol: "https", hostname: "cdn.sanity.io" },
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "images.pexels.com" }
-    ]
+    remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }]
   }
 };
 

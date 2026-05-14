@@ -62,7 +62,7 @@ export function PageAbout() {
                 <p>
                   Our journey began with a simple mission: to provide professional, safety-first industrial contracting
                   services that clients can rely on. Today, we deliver comprehensive solutions spanning asbestos
-                  removal, demolition, enabling works, commercial refurbishments, and remediation.
+                  removal, demolition, enabling works and structural alterations, refurbishments, and remediation.
                 </p>
                 <p>
                   Every project we undertake is guided by our core principle: safety is non-negotiable. This commitment
@@ -75,7 +75,7 @@ export function PageAbout() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
+                  src="/photos/PCLWelfareBox.jpg"
                   alt="PCL Limited team on site"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"

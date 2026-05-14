@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight, CheckCircle2, FileCheck, Shield } from "lucide-react";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { asbestosRemovalFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
   {
@@ -112,8 +114,8 @@ export function PageAsbestosRemoval() {
             <div className="relative">
               <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80"
-                  alt="Asbestos removal team in protective gear"
+                  src="/photos/AsbestosRemovalPerson.png"
+                  alt="Asbestos removal operative in protective gear"
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
@@ -209,6 +211,11 @@ export function PageAsbestosRemoval() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection
+        intro="Common questions about licensed asbestos removal, clearances, and how we work on your site."
+        items={asbestosRemovalFaqItems}
+      />
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

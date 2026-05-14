@@ -16,7 +16,7 @@ const services = [
       "Type 1–3 ACMs in occupied & industrial buildings",
       "Method statements, RAMS & client reporting"
     ],
-    imageId: "1504307651254-35680f356dfd"
+    image: "/photos/AsbestosRemovalPerson.png"
   },
   {
     icon: Hammer,
@@ -30,7 +30,7 @@ const services = [
       "Segregation, recycling & licensed disposal",
       "CDM coordination & utility isolations"
     ],
-    imageId: "1581094271901-8022df4466f9"
+    image: "/photos/VerticalDemo.jpg"
   },
   {
     icon: Wrench,
@@ -44,21 +44,21 @@ const services = [
       "Groundworks, hoarding & site logistics",
       "Temporary works design interfaces"
     ],
-    imageId: "1590846406792-0adc7f938f1d"
+    image: "/photos/StructualBars.jpg"
   },
   {
     icon: Building2,
-    title: "Commercial Refurbishments",
+    title: "Refurbishments",
     description:
-      "Complete commercial interior refurbishment with minimal disruption to ongoing operations. We transform spaces while you continue business as usual.",
-    href: "/services/commercial-refurbishments",
+      "Interior refurbishment and fit-out for workplaces, education, social housing, and public buildings. We programme phased and occupied delivery to limit disruption.",
+    href: "/services/refurbishments",
     coverage: [
       "Cat A / Cat B & tenant fit-out",
-      "Phased works in occupied buildings",
+      "Phased works in occupied buildings, campuses & housing",
       "Finishes, partitions & ceilings",
       "Quality plans, commissioning & O&M handover"
     ],
-    imageId: "1497366216548-37526070297c"
+    image: "/photos/BareWall.jpg"
   },
   {
     icon: Sparkles,
@@ -72,7 +72,7 @@ const services = [
       "Containment, negative pressure & validation",
       "Clearance documentation & certification"
     ],
-    imageId: "1532094349884-543bc11b234d"
+    image: "/photos/Remediation.jpg"
   }
 ];
 
@@ -143,7 +143,7 @@ export function PageServices() {
                       )}
                     >
                       <Image
-                        src={`https://images.unsplash.com/photo-${service.imageId}?w=800&q=80`}
+                        src={service.image}
                         alt={service.title}
                         fill
                         sizes="(min-width: 1024px) 50vw, 100vw"

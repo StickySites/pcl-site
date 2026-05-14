@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | PCL Limited"
   },
   description:
-    "PCL Limited provides professional industrial contracting, including asbestos removal, demolition, enabling works, commercial refurbishments, and remediation."
+    "PCL Limited provides professional industrial contracting, including asbestos removal, demolition, enabling works and structural alterations, refurbishments, and remediation."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

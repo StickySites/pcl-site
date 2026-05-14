@@ -18,8 +18,8 @@ const footerNavigation = {
   services: [
     { name: "Asbestos Removal", href: "/services/asbestos-removal" },
     { name: "Demolition & Strip Out", href: "/services/demolition" },
-    { name: "Enabling Works", href: "/services/enabling-works" },
-    { name: "Commercial Refurbishments", href: "/services/commercial-refurbishments" },
+    { name: "Enabling Works & Structural Alterations", href: "/services/enabling-works" },
+    { name: "Refurbishments", href: "/services/refurbishments" },
     { name: "Remediation", href: "/services/remediation" }
   ]
 };

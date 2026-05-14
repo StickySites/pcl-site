@@ -1,9 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, Building2, CheckCircle2, Factory, HardHat, Shield, ShieldCheck, Sparkles } from "lucide-react";
+import { CertificationsStrip } from "@/components/figma-generated/certifications-strip";
 import { HomeHeroBackground } from "@/components/figma-generated/home-hero-background";
+import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
 import type { CaseStudyCategory } from "@/lib/case-studies";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
+import { homeFaqItems } from "@/lib/service-faqs";
 import { cn } from "@/lib/utils";
 
 const services = [
@@ -12,8 +15,9 @@ const services = [
     description:
       "Licensed asbestos removal with full HSE compliance and comprehensive risk management.",
     href: "/services/asbestos-removal",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png",
+    image: "/photos/Ventilation.png",
     imageContain: false,
+    imageClassName: "object-left",
     coverage: [
       "Licensed removal & disposal",
       "Surveys & air monitoring",
@@ -26,34 +30,34 @@ const services = [
     description:
       "Controlled demolition and complete strip-out services for commercial and industrial properties.",
     href: "/services/demolition",
-    image: "/brand/pcl-mark.png",
-    imageContain: true,
+    image: "/photos/VerticalDemo.jpg",
+    imageContain: false,
     coverage: ["Soft strip & structural", "Waste segregation", "CDM & safety plans", "Neighbouring property protection"]
   },
   {
-    title: "Enabling Works",
+    title: "Enabling Works & Structural Alterations",
     description:
       "Site preparation and structural alterations to facilitate new construction and refurbishment.",
     href: "/services/enabling-works",
-    image: "/brand/pcl-logo-header.png",
-    imageContain: true,
+    image: "/photos/StructualBars.jpg",
+    imageContain: false,
     coverage: ["Utility diversions", "Temporary works", "Ground & structural prep", "Handover to main works"]
   },
   {
-    title: "Commercial Refurbishments",
+    title: "Refurbishments",
     description:
-      "Complete commercial interior refurbishment with minimal disruption to ongoing operations.",
-    href: "/services/commercial-refurbishments",
-    image: "/brand/pcl-logo-footer.png",
-    imageContain: true,
-    coverage: ["Cat A / Cat B fit-out", "Phased & occupied sites", "MEP coordination", "Snagging & handover"]
+      "Interior refurbishment and fit-out for workplaces, education, social housing, and public buildings—with phasing that keeps sites operational where possible.",
+    href: "/services/refurbishments",
+    image: "/photos/BareWall.jpg",
+    imageContain: false,
+    coverage: ["Cat A / Cat B fit-out", "Education & housing estates", "Phased & occupied sites", "MEP coordination", "Snagging & handover"]
   },
   {
     title: "Remediation",
     description:
       "Industrial and environmental remediation and clearance for sensitive and regulated environments, including hazmat, biological risks, and laboratory-scale programmes.",
     href: "/services/remediation",
-    image: "/photos/Roofing_HalfandHalf_1178x718.png",
+    image: "/photos/Remediation.jpg",
     imageContain: false,
     coverage: [
       "Hazmat & biological remediation",
@@ -135,6 +139,8 @@ export function PageHome() {
         </div>
       </section>
 
+      <CertificationsStrip />
+
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -192,11 +198,14 @@ export function PageHome() {
                       alt=""
                       fill
                       sizes="(min-width: 640px) 280px, 100vw"
-                      className={
+                      className={cn(
                         service.imageContain
                           ? "object-contain object-center"
-                          : "object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      }
+                          : cn(
+                              "object-cover transition-transform duration-300 group-hover:scale-[1.03]",
+                              service.imageClassName
+                            )
+                      )}
                     />
                   </div>
                 </div>
@@ -214,6 +223,11 @@ export function PageHome() {
           </div>
         </div>
       </section>
+
+      <ServiceFaqSection
+        intro="Answers about how we work across asbestos removal, demolition, enabling works and structural alterations, refurbishments, and remediation."
+        items={homeFaqItems}
+      />
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

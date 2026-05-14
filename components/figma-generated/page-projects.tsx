@@ -12,8 +12,8 @@ const categories = [
   { id: "all", name: "All Projects" },
   { id: "asbestos", name: "Asbestos Removal" },
   { id: "demolition", name: "Demolition" },
-  { id: "refurbishment", name: "Refurbishment" },
-  { id: "enabling", name: "Enabling Works" },
+  { id: "refurbishment", name: "Refurbishments" },
+  { id: "enabling", name: "Enabling Works & Structural Alterations" },
   { id: "remediation", name: "Remediation" }
 ] as const;
 
