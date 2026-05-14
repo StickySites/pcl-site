@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Shield } from "lucide-react";
+import { HomeHeroBackground } from "@/components/figma-generated/home-hero-background";
 
 const services = [
   {
@@ -65,26 +66,18 @@ const featuredProjects = [
 export function PageHome() {
   return (
     <>
-      <section className="relative">
-        {/*
-          Video implementation example (from Figma Make):
-          <video className="absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster="/hero-poster.jpg">
-            <source src="/hero-video.mp4" type="video/mp4" />
-          </video>
-        */}
+      <section className="relative min-h-[min(100dvh,900px)] overflow-hidden sm:min-h-[85dvh]">
+        <div className="absolute inset-0 z-0">
+          <HomeHeroBackground />
+        </div>
+
         <div
-          className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"
-          style={{
-            backgroundImage:
-              "linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center"
-          }}
+          className="absolute inset-0 z-[1] bg-gradient-to-br from-black/75 via-black/50 to-black/70"
+          aria-hidden
         />
+        <div className="absolute inset-0 z-[1] bg-black/35" aria-hidden />
 
-        <div className="absolute inset-0 bg-black/40" />
-
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-48">
+        <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-48">
           <div className="max-w-3xl">
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
               Professional Industrial Contractors

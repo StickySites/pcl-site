@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { brandImages } from "@/lib/brand";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -17,6 +19,7 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [logoFailed, setLogoFailed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,15 +50,31 @@ export function SiteHeader() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <div className="flex lg:flex-1">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-brand">
-              <span className="text-xl font-bold text-brand-foreground">P</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold leading-tight text-black">PCL Limited</span>
-              <span className="text-xs leading-tight text-muted-foreground">Pier Contractors Limited</span>
-            </div>
+        <div className="flex min-w-0 flex-1 lg:flex-1">
+          <Link href="/" className="flex min-w-0 items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+            {logoFailed ? (
+              <>
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand">
+                  <span className="text-xl font-bold text-brand-foreground">P</span>
+                </div>
+                <div className="flex min-w-0 flex-col">
+                  <span className="font-bold leading-tight text-black">PCL Limited</span>
+                  <span className="text-xs leading-tight text-muted-foreground">Pier Contractors Limited</span>
+                </div>
+              </>
+            ) : (
+              <span className="relative block h-9 w-44 shrink-0 sm:h-10 sm:w-52">
+                <Image
+                  src={brandImages.headerLogo}
+                  alt="PCL Limited — Pier Contractors Limited"
+                  fill
+                  className="object-contain object-left"
+                  sizes="(max-width: 640px) 176px, 208px"
+                  priority
+                  onError={() => setLogoFailed(true)}
+                />
+              </span>
+            )}
           </Link>
         </div>
 

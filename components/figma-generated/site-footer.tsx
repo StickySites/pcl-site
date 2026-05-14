@@ -1,5 +1,10 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { brandImages } from "@/lib/brand";
 
 const footerNavigation = {
   company: [
@@ -17,20 +22,40 @@ const footerNavigation = {
 };
 
 export function SiteFooter() {
+  const [logoFailed, setLogoFailed] = useState(false);
+
   return (
     <footer className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2">
-              <div className="flex h-10 w-10 items-center justify-center rounded bg-brand">
-                <span className="text-xl font-bold text-brand-foreground">P</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold leading-tight">PCL Limited</span>
-                <span className="text-xs leading-tight text-gray-400">Pier Contractors Limited</span>
-              </div>
-            </div>
+            <Link
+              href="/"
+              className="inline-flex max-w-full items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            >
+              {logoFailed ? (
+                <div className="flex items-center gap-2">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded bg-brand">
+                    <span className="text-xl font-bold text-brand-foreground">P</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="font-bold leading-tight">PCL Limited</span>
+                    <span className="text-xs leading-tight text-gray-400">Pier Contractors Limited</span>
+                  </div>
+                </div>
+              ) : (
+                <span className="relative block h-10 w-52 shrink-0">
+                  <Image
+                    src={brandImages.footerLogo}
+                    alt="PCL Limited — Pier Contractors Limited"
+                    fill
+                    className="object-contain object-left"
+                    sizes="208px"
+                    onError={() => setLogoFailed(true)}
+                  />
+                </span>
+              )}
+            </Link>
             <p className="mt-4 max-w-md text-gray-400">
               Professional industrial contractors specializing in asbestos removal, demolition, and commercial
               refurbishments. Safety-first approach with comprehensive compliance.

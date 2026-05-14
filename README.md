@@ -39,6 +39,7 @@ To use Sanity for `getPageContent` and Studio, set `CONTENT_SOURCE=sanity` and f
 | `components/sections/` | Thin wrappers — route files import these, not raw `figma-generated` components |
 | `components/primitives/` | Shared shell (e.g. header + footer layout) |
 | `components/ui/` | shadcn-style primitives |
+| `public/brand/` | Header/footer logos (`pcl-logo-header.png`, `pcl-logo-footer.png`) — see folder README |
 | `lib/content/` | Local + Sanity content helpers and page contract |
 | `sanity/` | Schema types |
 
