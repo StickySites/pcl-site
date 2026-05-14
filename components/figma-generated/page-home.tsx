@@ -15,7 +15,7 @@ const services = [
     description:
       "Licensed asbestos removal with full HSE compliance and comprehensive risk management.",
     href: "/services/asbestos-removal",
-    image: "/photos/Ventilation.png",
+    image: "/photos/PCLWraps820x500.png",
     imageContain: false,
     imageClassName: "object-left",
     coverage: [

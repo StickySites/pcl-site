@@ -3,6 +3,9 @@ import Link from "next/link";
 import { ArrowRight, Building2, Hammer, Shield, Sparkles, Wrench } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+/** Matches intrinsic dimensions of `public/photos/AsbestosRemovalPerson.png` (2940×1644). */
+const ASBESTOS_REMOVAL_PERSON_IMAGE = "/photos/AsbestosRemovalPerson.png";
+
 const services = [
   {
     icon: Shield,
@@ -16,7 +19,7 @@ const services = [
       "Type 1–3 ACMs in occupied & industrial buildings",
       "Method statements, RAMS & client reporting"
     ],
-    image: "/photos/AsbestosRemovalPerson.png"
+    image: ASBESTOS_REMOVAL_PERSON_IMAGE
   },
   {
     icon: Hammer,
@@ -138,17 +141,28 @@ export function PageServices() {
                   <div className={imageOnLeft ? "lg:order-1" : undefined}>
                     <div
                       className={cn(
-                        "relative aspect-[4/3] overflow-hidden rounded-xl shadow-md",
+                        "relative overflow-hidden rounded-xl shadow-md",
+                        service.image === ASBESTOS_REMOVAL_PERSON_IMAGE
+                          ? "aspect-[2940/1644] bg-muted"
+                          : "aspect-[4/3]",
                         imageOnLeft ? "ring-1 ring-black/10" : "ring-1 ring-black/[0.07]"
                       )}
                     >
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        sizes="(min-width: 1024px) 50vw, 100vw"
-                        className="object-cover"
-                      />
+                      <div
+                        className={
+                          service.image === ASBESTOS_REMOVAL_PERSON_IMAGE
+                            ? "absolute -inset-px"
+                            : "absolute inset-0"
+                        }
+                      >
+                        <Image
+                          src={service.image}
+                          alt={service.title}
+                          fill
+                          sizes="(min-width: 1024px) 50vw, 100vw"
+                          className="object-cover"
+                        />
+                      </div>
                     </div>
                   </div>
                 </article>

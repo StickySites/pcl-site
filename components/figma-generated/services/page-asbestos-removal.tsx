@@ -112,14 +112,16 @@ export function PageAsbestosRemoval() {
             </div>
 
             <div className="relative">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-lg">
-                <Image
-                  src="/photos/AsbestosRemovalPerson.png"
-                  alt="Asbestos removal operative in protective gear"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
+              <div className="relative aspect-[2940/1644] overflow-hidden rounded-lg bg-muted shadow-lg">
+                <div className="absolute -inset-px">
+                  <Image
+                    src="/photos/AsbestosRemovalPerson.png"
+                    alt="Asbestos removal operative in protective gear"
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <div className="mt-6 rounded-lg border-l-4 border-brand bg-muted p-6">
                 <div className="flex items-start gap-3">

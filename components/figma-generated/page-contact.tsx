@@ -38,7 +38,7 @@ export function PageContact() {
               </p>
               <a
                 href={`tel:${phoneTel}`}
-                className="inline-flex text-2xl font-bold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="inline-flex text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Tel. {phoneDisplay}
               </a>
@@ -55,7 +55,7 @@ export function PageContact() {
               </p>
               <a
                 href={`mailto:${email}`}
-                className="text-lg font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 {email}
               </a>
