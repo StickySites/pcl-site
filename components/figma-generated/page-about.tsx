@@ -134,7 +134,7 @@ export function PageAbout() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {credentials.map((credential) => (
                   <div key={credential} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-accent" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
                     <span className="text-black">{credential}</span>
                   </div>
                 ))}
@@ -180,7 +180,7 @@ export function PageAbout() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               Get in touch
               <ArrowRight className="h-5 w-5" />

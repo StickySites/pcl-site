@@ -42,7 +42,7 @@ export function PageContact() {
               </p>
               <a
                 href={`tel:${phoneTel}`}
-                className="inline-flex text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                className="inline-flex text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Tel. {phoneDisplay}
               </a>
@@ -59,7 +59,7 @@ export function PageContact() {
               </p>
               <a
                 href={`mailto:${email}`}
-                className="text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                className="text-xl font-bold leading-7 text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 {email}
               </a>
@@ -68,7 +68,7 @@ export function PageContact() {
 
           <div className="mt-14 grid gap-8 border-t border-border pt-14 sm:grid-cols-2">
             <div className="flex gap-4 rounded-lg bg-muted p-6">
-              <MapPin className="h-6 w-6 shrink-0 text-brand-accent" aria-hidden />
+              <MapPin className="h-6 w-6 shrink-0 text-brand" aria-hidden />
               <div>
                 <h3 className="mb-1 font-bold text-black">Head office</h3>
                 <p className="text-muted-foreground">PCL Limited (Pier Contractors Limited)</p>
@@ -81,14 +81,14 @@ export function PageContact() {
                   href={address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-sm font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                  className="mt-3 inline-block text-sm font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                 >
                   Open in Google Maps
                 </a>
               </div>
             </div>
             <div className="flex gap-4 rounded-lg bg-muted p-6">
-              <Clock className="h-6 w-6 shrink-0 text-brand-accent" aria-hidden />
+              <Clock className="h-6 w-6 shrink-0 text-brand" aria-hidden />
               <div>
                 <h3 className="mb-1 font-bold text-black">Office hours</h3>
                 <p className="font-medium text-black">{hours.summary}</p>
@@ -100,7 +100,7 @@ export function PageContact() {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 font-semibold text-brand underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               View our services
             </Link>

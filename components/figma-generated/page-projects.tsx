@@ -58,7 +58,7 @@ export function PageProjects() {
                   key={category.id}
                   type="button"
                   onClick={() => setActiveCategory(category.id)}
-                  className={`rounded-full px-5 py-2.5 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent ${
+                  className={`rounded-full px-5 py-2.5 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
                     activeCategory === category.id
                       ? "bg-brand text-brand-foreground"
                       : "bg-muted text-black hover:bg-gray-300"
@@ -78,7 +78,7 @@ export function PageProjects() {
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
-                  className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                  className="group block overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     <Image
@@ -94,14 +94,14 @@ export function PageProjects() {
                   </div>
                   <div className="p-6">
                     <div className="mb-3 flex items-center gap-2">
-                      <Icon className="h-5 w-5 text-brand-accent" aria-hidden />
-                      <span className="text-sm font-semibold text-brand-accent">{project.categoryLabel}</span>
+                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                      <span className="text-sm font-semibold text-brand">{project.categoryLabel}</span>
                     </div>
                     <h2 className="mb-2 text-lg font-bold text-black">{project.title}</h2>
                     <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
                     <div className="flex items-center justify-between border-t border-border pt-4 text-sm text-muted-foreground">
                       <span>{project.location}</span>
-                      <span className="font-medium text-brand-accent">View case study →</span>
+                      <span className="font-medium text-brand">View case study →</span>
                     </div>
                   </div>
                 </Link>

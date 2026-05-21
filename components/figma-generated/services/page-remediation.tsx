@@ -51,7 +51,7 @@ export function PageRemediation() {
       <section className="relative bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-sm text-gray-400">
-            <Link href="/services" className="hover:text-brand-accent">
+            <Link href="/services" className="hover:text-brand">
               Services
             </Link>
             <span>/</span>
@@ -61,7 +61,7 @@ export function PageRemediation() {
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-brand">
               <Sparkles className="h-8 w-8 text-brand-foreground" />
             </div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand-accent">
+            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand">
               Industrial & environmental remediation
             </p>
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Remediation</h1>
@@ -106,7 +106,7 @@ export function PageRemediation() {
               <ul className="grid gap-3 sm:grid-cols-2">
                 {coverageAreas.map((item) => (
                   <li key={item} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-accent" aria-hidden />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand" aria-hidden />
                     <span className="text-sm text-black">{item}</span>
                   </li>
                 ))}
@@ -206,7 +206,7 @@ export function PageRemediation() {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Get in touch
                 <ArrowRight className="h-5 w-5" />

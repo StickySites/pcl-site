@@ -5,14 +5,15 @@
 @layer base {
   :root {
     /* PCL brand: token parity with Figma Make theme.css */
+    /* Logo orange — reserved for future use; UI uses --brand below */
     --brand-accent: #fd5442;
-    --brand: #d94535;
-    --brand-dark: #c73a2a;
+    --brand: #c73a2a;
+    --brand-dark: #ad3228;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
-    --primary: 7 66% 53%;
+    --primary: 7 66% 47%;
     --primary-foreground: 0 0% 98%;
     --secondary: 220 14% 96%;
     --secondary-foreground: 0 0% 9%;
@@ -22,7 +23,7 @@
     --accent-foreground: 0 0% 9%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 7 66% 53%;
+    --ring: 7 66% 47%;
     --radius: 0.5rem;
   }
 

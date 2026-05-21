@@ -15,7 +15,7 @@ export function PageProjectDetail({ study, pdfHref }: PageProjectDetailProps) {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
             href="/projects"
-            className="text-sm font-semibold text-brand-accent underline-offset-2 transition-colors hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+            className="text-sm font-semibold text-brand underline-offset-2 transition-colors hover:text-white hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
           >
             ← Back to projects
           </Link>
@@ -29,7 +29,7 @@ export function PageProjectDetail({ study, pdfHref }: PageProjectDetailProps) {
               href={pdfHref}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-brand bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center justify-center rounded-full border border-brand bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground transition-colors hover:bg-brand/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               Open PDF in new tab
             </a>

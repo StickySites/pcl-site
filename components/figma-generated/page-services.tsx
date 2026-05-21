@@ -107,7 +107,7 @@ export function PageServices() {
                 <article
                   key={service.title}
                   className={cn(
-                    "grid gap-10 rounded-2xl border p-6 shadow-sm sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-14 lg:p-10",
+                    "grid gap-12 rounded-2xl border p-7 shadow-sm sm:gap-10 sm:p-8 lg:grid-cols-2 lg:items-center lg:gap-14 lg:p-10",
                     imageOnLeft
                       ? "border-border/80 bg-muted/50 ring-1 ring-black/[0.04]"
                       : "border-border bg-white ring-1 ring-black/[0.06]"
@@ -135,7 +135,7 @@ export function PageServices() {
 
                     <Link
                       href={service.href}
-                      className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                      className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                     >
                       Learn more
                       <ArrowRight className="h-5 w-5" />
@@ -187,7 +187,7 @@ export function PageServices() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               Get in touch
               <ArrowRight className="h-5 w-5" />

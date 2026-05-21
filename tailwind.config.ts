@@ -19,7 +19,7 @@ const config: Config = {
     },
     extend: {
       outlineColor: {
-        brand: "#d94535",
+        brand: "#c73a2a",
         "brand-accent": "#fd5442"
       },
       colors: {
@@ -29,9 +29,10 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: {
-          DEFAULT: "#d94535",
+          DEFAULT: "#c73a2a",
+          /** Logo orange (#fd5442) — reserved; prefer `brand` in components */
           accent: "#fd5442",
-          dark: "#c73a2a",
+          dark: "#ad3228",
           foreground: "#ffffff"
         },
         primary: {

@@ -58,7 +58,7 @@ export function PageAsbestosRemoval() {
       <section className="relative bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-sm text-gray-400">
-            <Link href="/services" className="hover:text-brand-accent">
+            <Link href="/services" className="hover:text-brand">
               Services
             </Link>
             <span>/</span>
@@ -108,7 +108,7 @@ export function PageAsbestosRemoval() {
               <ul className="space-y-2">
                 {serviceCoverage.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-black">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -129,7 +129,7 @@ export function PageAsbestosRemoval() {
               </div>
               <div className="mt-6 rounded-lg border-l-4 border-brand bg-muted p-6">
                 <div className="flex items-start gap-3">
-                  <AlertTriangle className="mt-0.5 h-6 w-6 flex-shrink-0 text-brand-accent" />
+                  <AlertTriangle className="mt-0.5 h-6 w-6 flex-shrink-0 text-brand" />
                   <div>
                     <h3 className="mb-2 font-bold text-black">Safety First</h3>
                     <p className="text-sm text-muted-foreground">
@@ -181,7 +181,7 @@ export function PageAsbestosRemoval() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {safetyFeatures.map((feature) => (
                   <div key={feature} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-accent" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
                     <span className="text-black">{feature}</span>
                   </div>
                 ))}
@@ -189,28 +189,28 @@ export function PageAsbestosRemoval() {
             </div>
 
             <div className="rounded-lg bg-black p-8 text-white">
-              <FileCheck className="mb-4 h-12 w-12 text-brand-accent" />
+              <FileCheck className="mb-4 h-12 w-12 text-brand" />
               <h3 className="mb-4 text-2xl font-bold">Comprehensive Documentation</h3>
               <p className="mb-6 text-gray-300">Every asbestos removal project includes complete documentation:</p>
               <ul className="space-y-2 text-gray-300">
                 <li className="flex items-start gap-2">
-                  <span className="text-brand-accent">•</span>
+                  <span className="text-brand">•</span>
                   <span>Asbestos survey reports</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-brand-accent">•</span>
+                  <span className="text-brand">•</span>
                   <span>Method statements and risk assessments</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-brand-accent">•</span>
+                  <span className="text-brand">•</span>
                   <span>Air monitoring certificates</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-brand-accent">•</span>
+                  <span className="text-brand">•</span>
                   <span>Waste consignment notes</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-brand-accent">•</span>
+                  <span className="text-brand">•</span>
                   <span>Four-stage clearance certificates</span>
                 </li>
               </ul>
@@ -234,7 +234,7 @@ export function PageAsbestosRemoval() {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Get in touch
                 <ArrowRight className="h-5 w-5" />

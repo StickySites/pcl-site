@@ -35,7 +35,7 @@ function IconYoutube({ className }: { className?: string }) {
 
 const iconWrap = "h-4 w-4 text-gray-300 transition-colors group-hover:text-white";
 const iconButton =
-  "group inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gray-700 bg-gray-900 text-white hover:border-brand-accent hover:bg-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent";
+  "group inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-700 bg-gray-900 text-white hover:border-brand hover:bg-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:h-8 sm:w-8";
 
 type FooterSocialProps = {
   className?: string;

@@ -111,7 +111,7 @@ export function PageHome() {
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
                 href="/services"
-                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
               >
                 Our Services
                 <ArrowRight className="h-5 w-5" />
@@ -133,7 +133,7 @@ export function PageHome() {
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
               {trustIndicators.map((item, index) => (
                 <div key={index} className="flex items-center justify-center gap-3">
-                  <item.icon className="h-6 w-6 text-brand-accent" />
+                  <item.icon className="h-6 w-6 text-brand" />
                   <span className="font-semibold text-black">{item.text}</span>
                 </div>
               ))}
@@ -157,42 +157,42 @@ export function PageHome() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-x-10 gap-y-12">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-14 sm:gap-y-12">
             {services.map((service) => (
               <Link
                 key={service.title}
                 href={service.href}
-                className="group flex w-[min(100%,580px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted/35 via-white to-white shadow-sm ring-1 ring-black/[0.03] transition-all hover:-translate-y-0.5 hover:border-brand-accent hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent sm:flex-row sm:items-stretch"
+                className="group flex w-[min(100%,580px)] shrink-0 flex-col overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-muted/35 via-white to-white shadow-sm ring-1 ring-black/[0.03] transition-all hover:-translate-y-0.5 hover:border-brand hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:flex-row sm:items-stretch"
               >
-                <div className="relative flex min-w-0 flex-1 flex-col border-t border-border/70 px-5 pb-5 pt-1 sm:border-t-0 sm:border-r-4 sm:border-brand-accent sm:px-6 sm:py-5 sm:pl-6 sm:pr-5">
+                <div className="relative flex min-w-0 flex-1 flex-col border-t border-border/70 px-6 py-6 pb-6 pt-4 sm:border-t-0 sm:border-r-4 sm:border-brand sm:px-6 sm:py-5 sm:pl-6 sm:pr-5">
                   <p className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-brand">Service</p>
-                  <h3 className="mt-2 text-xl font-bold leading-tight text-black group-hover:text-brand-accent sm:text-2xl">
+                  <h3 className="mt-2 text-xl font-bold leading-tight text-black group-hover:text-brand sm:text-2xl">
                     {service.title}
                   </h3>
-                  <p className="mt-3 text-base leading-relaxed text-muted-foreground">{service.description}</p>
+                  <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:mt-3">{service.description}</p>
 
-                  <p className="mb-2 mt-5 text-xs font-semibold uppercase tracking-wide text-black/70 sm:mt-6">
+                  <p className="mb-2 mt-6 text-xs font-semibold uppercase tracking-wide text-black/70 sm:mt-6">
                     What we cover
                   </p>
-                  <ul className="grid grid-cols-1 gap-2">
+                  <ul className="grid grid-cols-1 gap-3 sm:gap-2">
                     {service.coverage.map((line) => (
                       <li key={line} className="flex items-start gap-2 text-sm text-black/90">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
+                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
                         <span className="leading-snug">{line}</span>
                       </li>
                     ))}
                   </ul>
 
-                  <div className="mt-auto flex flex-col gap-3 border-t border-border/80 pt-4 sm:flex-row sm:items-center sm:justify-between sm:pt-5">
+                  <div className="mt-auto flex flex-col gap-4 border-t border-border/80 pt-5 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:pt-5">
                     <span className="text-xs text-muted-foreground">HSE-led planning and documentation</span>
-                    <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand-accent">
+                    <span className="inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-brand">
                       Explore
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </span>
                   </div>
                 </div>
 
-                <div className="shrink-0 p-4 pb-2 sm:flex sm:w-[48%] sm:flex-col sm:self-stretch sm:p-5 sm:pb-5 sm:pl-2 sm:pr-5 sm:pt-5">
+                <div className="shrink-0 px-5 pb-5 pt-4 sm:flex sm:w-[48%] sm:flex-col sm:self-stretch sm:p-5 sm:pb-5 sm:pl-2 sm:pr-5 sm:pt-5">
                   <div
                     className={cn(
                       "relative mx-auto aspect-[4/3] w-full max-w-sm overflow-hidden rounded-xl bg-muted sm:mx-0 sm:max-w-none sm:aspect-auto sm:h-full sm:min-h-[220px] sm:flex-1",
@@ -222,7 +222,7 @@ export function PageHome() {
           <div className="mt-12 text-center">
             <Link
               href="/services"
-              className="inline-flex items-center gap-2 rounded border-2 border-brand bg-transparent px-6 py-3 font-semibold text-brand transition-colors hover:bg-brand hover:text-brand-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 rounded border-2 border-brand bg-transparent px-6 py-3 font-semibold text-brand transition-colors hover:bg-brand hover:text-brand-foreground focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               View All Services
             </Link>
@@ -256,7 +256,7 @@ export function PageHome() {
                 <Link
                   key={project.slug}
                   href={`/projects/${project.slug}`}
-                  className="group block w-[min(100%,360px)] shrink-0 overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+                  className="group block w-[min(100%,360px)] shrink-0 overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                     <Image
@@ -270,16 +270,16 @@ export function PageHome() {
                       )}
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="px-6 py-7 sm:p-6">
                     <div className="mb-3 flex items-center gap-2">
-                      <Icon className="h-5 w-5 text-brand-accent" aria-hidden />
-                      <span className="text-sm font-semibold text-brand-accent">{project.categoryLabel}</span>
+                      <Icon className="h-5 w-5 text-brand" aria-hidden />
+                      <span className="text-sm font-semibold text-brand">{project.categoryLabel}</span>
                     </div>
                     <h3 className="mb-2 text-lg font-bold text-black">{project.title}</h3>
                     <p className="mb-4 text-sm text-muted-foreground">{project.description}</p>
                     <div className="flex items-center justify-between border-t border-border pt-4 text-sm text-muted-foreground">
                       <span>{project.location}</span>
-                      <span className="font-medium text-brand-accent">View case study →</span>
+                      <span className="font-medium text-brand">View case study →</span>
                     </div>
                   </div>
                 </Link>
@@ -290,7 +290,7 @@ export function PageHome() {
           <div className="mt-12 text-center">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 rounded bg-brand px-6 py-3 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               View All Projects
               <ArrowRight className="h-5 w-5" />
@@ -311,7 +311,7 @@ export function PageHome() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
+              className="inline-flex items-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
             >
               Get in touch
               <ArrowRight className="h-5 w-5" />
