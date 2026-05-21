@@ -86,7 +86,7 @@ export function SiteHeader() {
       >
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
           <div className="flex min-w-0 flex-1 lg:flex-1">
-          <Link href="/" className="flex min-w-0 items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand">
+          <Link href="/" className="flex min-w-0 items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent">
             {logoFailed ? (
               <>
                 <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-brand">
@@ -119,10 +119,10 @@ export function SiteHeader() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`relative px-1 py-2 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand ${
+                className={`relative px-1 py-2 font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-accent ${
                   isActive(item.href)
-                    ? "text-brand after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-brand"
-                    : "text-black hover:text-brand"
+                    ? "text-brand after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-full after:bg-brand-accent"
+                    : "text-black hover:text-brand-accent"
                 }`}
               >
                 {item.name}
@@ -131,8 +131,8 @@ export function SiteHeader() {
           </div>
           <Link
             href="/contact"
-            className={`shrink-0 rounded-full border-2 border-white bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
-              isActive("/contact") ? "ring-2 ring-brand ring-offset-2 ring-offset-white" : "hover:bg-brand-dark"
+            className={`shrink-0 rounded-full border-2 border-white bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground shadow-sm transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent ${
+              isActive("/contact") ? "ring-2 ring-brand-accent ring-offset-2 ring-offset-white" : "hover:bg-brand-dark"
             }`}
           >
             Get in touch
@@ -142,7 +142,7 @@ export function SiteHeader() {
           <div className="flex lg:hidden">
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-md text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -158,10 +158,10 @@ export function SiteHeader() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block rounded-md px-3 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand ${
+                className={`block rounded-md px-3 py-3 text-base font-semibold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent ${
                   isActive(item.href)
                     ? "bg-brand text-brand-foreground"
-                    : "text-black hover:bg-muted hover:text-brand"
+                    : "text-black hover:bg-muted hover:text-brand-accent"
                 }`}
               >
                 {item.name}
@@ -169,7 +169,7 @@ export function SiteHeader() {
             ))}
             <Link
               href="/contact"
-              className="mt-3 block rounded-full border-2 border-white bg-brand px-4 py-3 text-center text-sm font-semibold text-brand-foreground shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+              className="mt-3 block rounded-full border-2 border-white bg-brand px-4 py-3 text-center text-sm font-semibold text-brand-foreground shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
             >
               Get in touch
             </Link>

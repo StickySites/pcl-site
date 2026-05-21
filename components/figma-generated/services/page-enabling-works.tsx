@@ -58,7 +58,7 @@ export function PageEnablingWorks() {
       <section className="relative bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-sm text-gray-400">
-            <Link href="/services" className="hover:text-brand">
+            <Link href="/services" className="hover:text-brand-accent">
               Services
             </Link>
             <span>/</span>
@@ -107,7 +107,7 @@ export function PageEnablingWorks() {
               <ul className="space-y-2">
                 {serviceCoverage.map((item) => (
                   <li key={item} className="flex gap-3 text-sm text-black">
-                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                    <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -172,7 +172,7 @@ export function PageEnablingWorks() {
               <div className="grid gap-3 sm:grid-cols-2">
                 {services.map((service) => (
                   <div key={service} className="flex items-start gap-3">
-                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" />
+                    <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand-accent" />
                     <span className="text-black">{service}</span>
                   </div>
                 ))}
@@ -218,7 +218,7 @@ export function PageEnablingWorks() {
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="inline-flex items-center justify-center gap-2 rounded bg-brand px-8 py-4 font-semibold text-brand-foreground transition-colors hover:bg-brand-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
               >
                 Get in touch
                 <ArrowRight className="h-5 w-5" />

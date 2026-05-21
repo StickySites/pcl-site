@@ -35,7 +35,7 @@ export function SiteFooter() {
             <div className="flex flex-row items-start gap-4 max-[360px]:flex-col max-[360px]:gap-3 sm:gap-6">
               <Link
                 href="/"
-                className="inline-flex shrink-0 items-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="inline-flex shrink-0 items-start focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
               >
                 <span className="inline-flex shrink-0 items-center justify-center rounded-full bg-white p-2">
                   {logoFailed ? (
@@ -63,30 +63,30 @@ export function SiteFooter() {
             </div>
             <div className="mt-6 space-y-2 text-sm text-gray-400">
               <div className="flex items-start gap-2">
-                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                <Phone className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                 <a
                   href={`tel:${siteContact.phoneTel}`}
-                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
                 >
                   Tel. {siteContact.phoneDisplay}
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                 <a
                   href={`mailto:${siteContact.email}`}
-                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
                 >
                   {siteContact.email}
                 </a>
               </div>
               <div className="flex items-start gap-2">
-                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand" aria-hidden />
+                <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent" aria-hidden />
                 <a
                   href={siteContact.address.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                  className="hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
                 >
                   {siteContact.address.lines.join(", ")}
                 </a>
@@ -102,7 +102,7 @@ export function SiteFooter() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                    className="text-gray-400 transition-colors hover:text-brand-accent focus-visible:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
                   >
                     {item.name}
                   </Link>
@@ -118,7 +118,7 @@ export function SiteFooter() {
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="text-gray-400 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                    className="text-gray-400 transition-colors hover:text-brand-accent focus-visible:text-brand-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
                   >
                     {item.name}
                   </Link>
@@ -149,7 +149,7 @@ export function SiteFooter() {
                 href="https://stkysites.co.uk"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-inherit underline-offset-2 transition-colors hover:text-brand hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                className="text-sm text-inherit underline-offset-2 transition-colors hover:text-brand-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-accent"
               >
                 StickySites
               </a>

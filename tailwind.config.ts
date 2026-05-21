@@ -19,7 +19,8 @@ const config: Config = {
     },
     extend: {
       outlineColor: {
-        brand: "#fd5442"
+        brand: "#d94535",
+        "brand-accent": "#fd5442"
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,8 +29,9 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: {
-          DEFAULT: "#fd5442",
-          dark: "#e54838",
+          DEFAULT: "#d94535",
+          accent: "#fd5442",
+          dark: "#c73a2a",
           foreground: "#ffffff"
         },
         primary: {
