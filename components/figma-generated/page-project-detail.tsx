@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/case-studies";
+import { RevealOnView } from "@/components/reveal-on-view";
 
 type PageProjectDetailProps = {
   study: CaseStudy;
@@ -9,6 +10,7 @@ type PageProjectDetailProps = {
 export function PageProjectDetail({ study, pdfHref }: PageProjectDetailProps) {
   return (
     <>
+      <RevealOnView>
       <section className="bg-black py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <Link
@@ -34,7 +36,9 @@ export function PageProjectDetail({ study, pdfHref }: PageProjectDetailProps) {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="border-t border-gray-800 bg-muted py-6 sm:py-8">
         <div className="mx-auto max-w-7xl px-2 sm:px-4 lg:px-8">
           <p className="mb-3 px-2 text-center text-xs text-muted-foreground sm:text-left">
@@ -48,6 +52,7 @@ export function PageProjectDetail({ study, pdfHref }: PageProjectDetailProps) {
           />
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }

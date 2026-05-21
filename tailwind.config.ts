@@ -19,7 +19,7 @@ const config: Config = {
     },
     extend: {
       outlineColor: {
-        brand: "#b70004"
+        brand: "#fd5442"
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,8 +28,8 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: {
-          DEFAULT: "#b70004",
-          dark: "#8a0003",
+          DEFAULT: "#fd5442",
+          dark: "#e54838",
           foreground: "#ffffff"
         },
         primary: {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Shield, Target, Users } from "lucide-react";
+import { RevealOnView } from "@/components/reveal-on-view";
 
 const values = [
   {
@@ -37,6 +38,7 @@ const credentials = [
 export function PageAbout() {
   return (
     <>
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -48,7 +50,9 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -90,7 +94,9 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -113,7 +119,9 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -159,7 +167,9 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -178,6 +188,7 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }

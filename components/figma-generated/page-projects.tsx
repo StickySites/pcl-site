@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Building2, Factory, HardHat, ShieldCheck, Sparkles } from "lucide-react";
 import { useState } from "react";
+import { RevealOnView } from "@/components/reveal-on-view";
 import type { CaseStudy, CaseStudyCategory } from "@/lib/case-studies";
 import { caseStudies } from "@/lib/case-studies";
 import { cn } from "@/lib/utils";
@@ -33,6 +34,7 @@ export function PageProjects() {
 
   return (
     <>
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -44,7 +46,9 @@ export function PageProjects() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
@@ -112,6 +116,7 @@ export function PageProjects() {
           ) : null}
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }

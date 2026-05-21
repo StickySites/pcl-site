@@ -5,13 +5,13 @@
 @layer base {
   :root {
     /* PCL brand: token parity with Figma Make theme.css */
-    --brand: #b70004;
-    --brand-dark: #8a0003;
+    --brand: #fd5442;
+    --brand-dark: #e54838;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 3.9%;
-    --primary: 356 100% 36%;
+    --primary: 6 98% 63%;
     --primary-foreground: 0 0% 98%;
     --secondary: 220 14% 96%;
     --secondary-foreground: 0 0% 9%;
@@ -21,7 +21,7 @@
     --accent-foreground: 0 0% 9%;
     --border: 0 0% 89.8%;
     --input: 0 0% 89.8%;
-    --ring: 356 100% 36%;
+    --ring: 6 98% 63%;
     --radius: 0.5rem;
   }
 

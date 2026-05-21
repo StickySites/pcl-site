@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { RevealOnView } from "@/components/reveal-on-view";
 import { siteContact } from "@/lib/site-contact";
 
 export function PageContact() {
@@ -7,6 +8,7 @@ export function PageContact() {
 
   return (
     <>
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -23,7 +25,9 @@ export function PageContact() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-2 lg:gap-14">
@@ -103,6 +107,7 @@ export function PageContact() {
           </div>
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }

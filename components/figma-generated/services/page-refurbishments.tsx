@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, CheckCircle2 } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { RevealOnView } from "@/components/reveal-on-view";
 import { refurbishmentFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
@@ -54,6 +55,7 @@ const serviceCoverage = [
 export function PageRefurbishments() {
   return (
     <>
+      <RevealOnView>
       <section className="relative bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-3 text-sm text-gray-400">
@@ -75,7 +77,9 @@ export function PageRefurbishments() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
@@ -133,6 +137,7 @@ export function PageRefurbishments() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, Hammer, Shield, Sparkles, Wrench } from "lucide-react";
+import { RevealOnView } from "@/components/reveal-on-view";
 import { cn } from "@/lib/utils";
 
 /** Matches intrinsic dimensions of `public/photos/AsbestosRemovalPerson.png` (2940×1644). */
@@ -82,6 +83,7 @@ const services = [
 export function PageServices() {
   return (
     <>
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
@@ -93,7 +95,9 @@ export function PageServices() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col gap-20 sm:gap-24 lg:gap-28">
@@ -171,7 +175,9 @@ export function PageServices() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="rounded-lg bg-black p-8 text-center sm:p-12">
@@ -189,6 +195,7 @@ export function PageServices() {
           </div>
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }

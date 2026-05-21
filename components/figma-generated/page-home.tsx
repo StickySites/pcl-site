@@ -4,6 +4,7 @@ import { ArrowRight, Award, Building2, CheckCircle2, Factory, HardHat, Shield, S
 import { CertificationsStrip } from "@/components/figma-generated/certifications-strip";
 import { HomeHeroBackground } from "@/components/figma-generated/home-hero-background";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { RevealOnView } from "@/components/reveal-on-view";
 import type { CaseStudyCategory } from "@/lib/case-studies";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
 import { homeFaqItems } from "@/lib/service-faqs";
@@ -126,21 +127,26 @@ export function PageHome() {
         </div>
       </section>
 
-      <section className="border-b border-border bg-muted py-8">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            {trustIndicators.map((item, index) => (
-              <div key={index} className="flex items-center justify-center gap-3">
-                <item.icon className="h-6 w-6 text-brand" />
-                <span className="font-semibold text-black">{item.text}</span>
-              </div>
-            ))}
+      <RevealOnView>
+        <section className="border-b border-border bg-muted py-8">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
+              {trustIndicators.map((item, index) => (
+                <div key={index} className="flex items-center justify-center gap-3">
+                  <item.icon className="h-6 w-6 text-brand" />
+                  <span className="font-semibold text-black">{item.text}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </RevealOnView>
 
-      <CertificationsStrip />
+      <RevealOnView>
+        <CertificationsStrip />
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-white py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -223,12 +229,16 @@ export function PageHome() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <ServiceFaqSection
         intro="Answers about how we work across asbestos removal, demolition, enabling works and structural alterations, refurbishments, and remediation."
         items={homeFaqItems}
       />
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -288,7 +298,9 @@ export function PageHome() {
           </div>
         </div>
       </section>
+      </RevealOnView>
 
+      <RevealOnView>
       <section className="bg-black py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
@@ -307,6 +319,7 @@ export function PageHome() {
           </div>
         </div>
       </section>
+      </RevealOnView>
     </>
   );
 }
