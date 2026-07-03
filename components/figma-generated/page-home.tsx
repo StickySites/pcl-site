@@ -105,7 +105,10 @@ export function PageHome() {
               Pier Contractors Limited
             </h1> */}
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Licensed asbestos removal and construction contractors
+              {/* Licensed asbestos removal and construction contractors */}
+              {/* Licensed Asbestos Removal and Construction Contractors */}
+              {/* Licensed Asbestos Removal and Construction Company */}
+              Professional Asbestos Removal and Construction Company
             </h1>
             {/* <p className="mb-8 text-lg text-gray-200 sm:text-xl">
               A multi-disciplined company specialising in the removal of asbestos and construction works, including

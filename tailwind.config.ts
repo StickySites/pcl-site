@@ -21,8 +21,14 @@ const config: Config = {
       outlineColor: {
         // brand: "#c73a2a",           // original rust red — kept for reference
         // "brand-accent": "#fd5442",  // original accent — kept for reference
-        brand: "#FF6B35",              // Pantone 165C (vivid red-orange per client brief)
-        "brand-accent": "#FF6B35"
+        // brand: "#FF6B35",           // Pantone 165C — kept for reference
+        // brand: "#c44112",
+        // brand: "#cf572b",
+        brand: "#e35927",
+        // "brand-accent": "#FF6B35",
+        // "brand-accent": "#c44112",
+        // "brand-accent": "#cf572b",
+        "brand-accent": "#e35927"
       },
       colors: {
         border: "hsl(var(--border))",
@@ -34,10 +40,18 @@ const config: Config = {
           // DEFAULT: "#c73a2a",  // original rust red — kept for reference
           // accent: "#fd5442",   // original accent — kept for reference
           // dark: "#ad3228",     // original dark — kept for reference
-          DEFAULT: "#FF6B35",     // Pantone 165C per client brief
-          /** Pantone 165C vivid red-orange */
-          accent: "#FF6B35",
-          dark: "#e05520",        // darkened variant for hover states
+          // DEFAULT: "#FF6B35",  // Pantone 165C — kept for reference
+          // accent: "#FF6B35",
+          // dark: "#e05520",
+          // DEFAULT: "#c44112",
+          // accent: "#c44112",
+          // dark: "#ac3910",        // ~12% darker for hover states
+          // DEFAULT: "#cf572b",
+          // accent: "#cf572b",
+          // dark: "#b64d26",        // ~12% darker for hover states
+          DEFAULT: "#e35927",
+          accent: "#e35927",
+          dark: "#c84e22",        // ~12% darker for hover states
           foreground: "#ffffff"
         },
         primary: {
