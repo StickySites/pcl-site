@@ -5,6 +5,7 @@ import { getSiteOrigin } from "@/lib/site-url";
 const STATIC_PATHS = [
   "/",
   "/about",
+  "/certificates",
   "/contact",
   "/projects",
   "/services",

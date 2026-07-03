@@ -10,6 +10,11 @@ export const metadata: Metadata = createPageMetadata({
   ogImage: "/photos/PCLWraps820x500.png"
 });
 
-export default function Page() {
-  return <ProjectsPage />;
+type PageProps = {
+  searchParams: Promise<{ category?: string }>;
+};
+
+export default async function Page({ searchParams }: PageProps) {
+  const { category } = await searchParams;
+  return <ProjectsPage category={category} />;
 }

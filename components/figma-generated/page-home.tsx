@@ -70,9 +70,10 @@ const services = [
 ];
 
 const trustIndicators = [
-  { icon: Shield, text: "HSE Licensed" },
-  { icon: CheckCircle2, text: "ISO Certified" },
-  { icon: Award, text: "20+ Years Experience" }
+  { icon: Shield, text: "HSE Licensed", href: "/certificates#hse-licence" },
+  { icon: CheckCircle2, text: "ISO Certified", href: "/certificates#iso-certifications" },
+  // { icon: Award, text: "20+ Years Experience" },  // original — kept for reference
+  { icon: Award, text: "Combined Over 90+ Years Experience" }
 ];
 
 const categoryIcons: Record<CaseStudyCategory, typeof Building2> = {
@@ -97,16 +98,31 @@ export function PageHome() {
           className="absolute inset-0 z-[1] bg-gradient-to-br from-black/75 via-black/50 to-black/70"
           aria-hidden
         />
-        <div className="absolute inset-0 z-[1] bg-black/35" aria-hidden />
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-48">
           <div className="max-w-3xl">
+            {/* <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
+              Pier Contractors Limited
+            </h1> */}
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl lg:text-6xl">
-              Professional Industrial Contractors
+              Licensed asbestos removal and construction contractors
             </h1>
+            {/* <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+              A multi-disciplined company specialising in the removal of asbestos and construction works, including
+              demolition, structural alterations, fit-out and refurbishment.
+            </p> */}
+            {/* <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+              <span className="font-semibold text-white">Pier Contractors Limited</span> — a multi-disciplined company
+              specialising in the removal of asbestos and construction works, including demolition, structural alterations,
+              fit-out and refurbishment.
+            </p> */}
+            {/* <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+              <span className="font-semibold text-white">Pier Contractors Limited</span> specialises in asbestos removal,
+              demolition, structural alterations, and fit-out and refurbishment.
+            </p> */}
             <p className="mb-8 text-lg text-gray-200 sm:text-xl">
-              PCL Limited delivers comprehensive industrial contracting services with an unwavering commitment to
-              safety, compliance, and quality. From asbestos removal to complete demolition projects.
+              <span className="font-semibold text-white">Pier Contractors Limited</span> specialises in asbestos removal,
+              demolition, structural alterations, and refurbishment.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link
@@ -131,12 +147,29 @@ export function PageHome() {
         <section className="border-b border-border bg-muted py-8">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-              {trustIndicators.map((item, index) => (
-                <div key={index} className="flex items-center justify-center gap-3">
-                  <item.icon className="h-6 w-6 text-brand" />
-                  <span className="font-semibold text-black">{item.text}</span>
-                </div>
-              ))}
+              {trustIndicators.map((item, index) => {
+                const content = (
+                  <>
+                    <item.icon className="h-6 w-6 text-brand" />
+                    <span className="font-semibold text-black">{item.text}</span>
+                  </>
+                );
+
+                return item.href ? (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="group flex items-center justify-center gap-3 rounded-md transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand"
+                  >
+                    <item.icon className="h-6 w-6 text-brand" />
+                    <span className="font-semibold text-black group-hover:text-brand">{item.text}</span>
+                  </Link>
+                ) : (
+                  <div key={index} className="flex items-center justify-center gap-3">
+                    {content}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

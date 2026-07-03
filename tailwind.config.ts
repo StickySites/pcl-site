@@ -19,8 +19,10 @@ const config: Config = {
     },
     extend: {
       outlineColor: {
-        brand: "#c73a2a",
-        "brand-accent": "#fd5442"
+        // brand: "#c73a2a",           // original rust red — kept for reference
+        // "brand-accent": "#fd5442",  // original accent — kept for reference
+        brand: "#FF6B35",              // Pantone 165C (vivid red-orange per client brief)
+        "brand-accent": "#FF6B35"
       },
       colors: {
         border: "hsl(var(--border))",
@@ -29,10 +31,13 @@ const config: Config = {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         brand: {
-          DEFAULT: "#c73a2a",
-          /** Logo orange (#fd5442) — reserved; prefer `brand` in components */
-          accent: "#fd5442",
-          dark: "#ad3228",
+          // DEFAULT: "#c73a2a",  // original rust red — kept for reference
+          // accent: "#fd5442",   // original accent — kept for reference
+          // dark: "#ad3228",     // original dark — kept for reference
+          DEFAULT: "#FF6B35",     // Pantone 165C per client brief
+          /** Pantone 165C vivid red-orange */
+          accent: "#FF6B35",
+          dark: "#e05520",        // darkened variant for hover states
           foreground: "#ffffff"
         },
         primary: {

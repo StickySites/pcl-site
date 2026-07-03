@@ -99,30 +99,35 @@ export function SiteHeader() {
           <div className="flex min-w-0 flex-1 lg:flex-1">
             <Link
               href="/"
-              className="flex min-w-0 max-w-[calc(100%-7.5rem)] items-center gap-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:max-w-none lg:max-w-none"
+              aria-label="PCL Limited, Pier Contractors Limited — Home"
+              className="flex min-w-0 max-w-[calc(100%-7.5rem)] items-center gap-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:max-w-none lg:max-w-none"
             >
               {logoFailed ? (
                 <>
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded bg-brand">
                     <span className="text-2xl font-bold text-brand-foreground">P</span>
                   </div>
-                  <div className="flex min-w-0 flex-col">
-                    <span className="text-lg font-bold leading-tight text-black">PCL Limited</span>
-                    <span className="text-sm leading-tight text-muted-foreground">Pier Contractors Limited</span>
-                  </div>
+                  <span className="hidden min-w-0 truncate text-sm font-bold leading-tight text-black sm:inline lg:text-base">
+                    Pier Contractors Limited
+                  </span>
                 </>
               ) : (
-                <span className="relative block h-10 w-40 shrink-0 sm:h-12 sm:w-52 lg:h-16 lg:w-80">
-                  <Image
-                    src={brandImages.headerLogo}
-                    alt="PCL Limited, Pier Contractors Limited"
-                    fill
-                    className="object-contain object-left"
-                    sizes="(max-width: 1023px) 208px, 320px"
-                    priority
-                    onError={() => setLogoFailed(true)}
-                  />
-                </span>
+                <>
+                  <span className="relative block h-10 shrink-0 aspect-[480/354] sm:h-12 lg:h-14">
+                    <Image
+                      src={brandImages.headerLogo}
+                      alt=""
+                      fill
+                      className="object-contain object-left"
+                      sizes="(max-width: 1023px) 65px, 76px"
+                      priority
+                      onError={() => setLogoFailed(true)}
+                    />
+                  </span>
+                  <span className="hidden min-w-0 truncate text-sm font-bold leading-tight text-black sm:inline lg:text-base">
+                    Pier Contractors Limited
+                  </span>
+                </>
               )}
             </Link>
           </div>

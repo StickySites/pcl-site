@@ -2,14 +2,26 @@ import Image from "next/image";
 
 type CredentialLogo = { src: string; alt: string };
 
+// Original logos — commented out; replaced with updated set per client brief June 2026
+// { src: "/credentials/CHAS_Creditation.png", alt: "CHAS accreditation logo" },
+// { src: "/credentials/cyberessentials.png", alt: "Cyber Essentials certification logo" },
+// { src: "/credentials/BP_Creditation.png", alt: "Industry accreditation logo" },
+// { src: "/credentials/Ciro.png", alt: "Industry affiliation logo" },          // removed: client does not hold this
+// { src: "/credentials/AccreditationImage1.png", alt: "Professional accreditation logo, badge one of three" },
+// { src: "/credentials/AccreditationImage2.png", alt: "Professional accreditation logo, badge two of three" },
+// { src: "/credentials/AccreditationImage3.png", alt: "Professional accreditation logo, badge three of three" },
+
 const credentialLogos: readonly CredentialLogo[] = [
-  { src: "/credentials/CHAS_Creditation.png", alt: "CHAS accreditation logo" },
-  { src: "/credentials/cyberessentials.png", alt: "Cyber Essentials certification logo" },
-  { src: "/credentials/BP_Creditation.png", alt: "Industry accreditation logo" },
-  { src: "/credentials/Ciro.png", alt: "Industry affiliation logo" },
-  { src: "/credentials/AccreditationImage1.png", alt: "Professional accreditation logo, badge one of three" },
-  { src: "/credentials/AccreditationImage2.png", alt: "Professional accreditation logo, badge two of three" },
-  { src: "/credentials/AccreditationImage3.png", alt: "Professional accreditation logo, badge three of three" }
+  { src: "/credentials/Home Page - CHAS Veriforce Logo.png",      alt: "CHAS Veriforce accreditation logo" },
+  { src: "/credentials/Home Page - SSIP Logo.png",                alt: "SSIP Safety Scheme in Procurement logo" },
+  { src: "/credentials/Home Page - Builders Profile Logo.png",    alt: "Builders Profile logo" },
+  { src: "/credentials/Home Page - SafeContractor Logo.png",      alt: "SafeContractor approved logo" },
+  { src: "/credentials/Home Page - Cyber Essentials Logo.png",    alt: "Cyber Essentials certification logo" },
+  { src: "/credentials/Home Page - Constructionline Logo.png",    alt: "Constructionline logo" },
+  { src: "/credentials/Home Page - ACAD Logo.png",                alt: "ACAD logo" },
+  { src: "/credentials/Home Page - ARCA Logo.png",                alt: "ARCA logo" },
+  { src: "/credentials/Home Page - ASESA Logo.png",               alt: "ASESA Asbestos & Environmental Safety Association logo" },
+  { src: "/credentials/Home Page - Social Value Logo.png",        alt: "Social Value logo" },
 ];
 
 function LogoCell({ logo }: { logo: CredentialLogo }) {

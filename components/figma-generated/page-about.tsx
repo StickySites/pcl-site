@@ -31,8 +31,14 @@ const credentials = [
   "ISO 9001 Quality Management",
   "ISO 14001 Environmental Management",
   "ISO 45001 Occupational Health & Safety",
-  "CHAS Accredited",
-  "Constructionline Gold Member"
+  // "CHAS Accredited",  // original — updated per client brief June 2026
+  "CHAS Veriforce Accredited",
+  "Constructionline Gold Member",
+  "SSIP (Safety Scheme in Procurement)",
+  "Builders Profile",
+  "Community Safe Contractor",
+  "Cyber Essentials",
+  "Social Value"
 ];
 
 export function PageAbout() {
@@ -59,9 +65,13 @@ export function PageAbout() {
             <div>
               <h2 className="mb-6 text-3xl font-bold text-black">Our Story</h2>
               <div className="space-y-4 text-muted-foreground">
-                <p>
+                {/* <p>
                   Founded over twenty years ago, PCL Limited (Pier Contractors Limited) has established itself as a
                   trusted partner for complex industrial contracting projects across the United Kingdom.
+                </p> */}
+                <p>
+                  Founded in 2010, PCL Limited (Pier Contractors Limited) has established itself as a trusted partner
+                  for complex industrial contracting projects across the United Kingdom.
                 </p>
                 <p>
                   Our journey began with a simple mission: to provide professional, safety-first industrial contracting
@@ -87,7 +97,8 @@ export function PageAbout() {
                 />
               </div>
               <div className="mt-6 rounded-lg bg-brand p-6 text-brand-foreground">
-                <div className="mb-2 text-4xl font-bold">20+</div>
+                {/* <div className="mb-2 text-4xl font-bold">20+</div> */}
+                <div className="mb-2 text-4xl font-bold">90+</div>
                 <div className="text-lg">Years of Professional Excellence</div>
               </div>
             </div>
@@ -174,8 +185,12 @@ export function PageAbout() {
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="mb-4 text-3xl font-bold text-white sm:text-4xl">Work With PCL Limited</h2>
-            <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
+            {/* <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
               Partner with a team that brings two decades of industrial contracting expertise and an uncompromising
+              commitment to safety and quality.
+            </p> */}
+            <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
+              Partner with a team that brings over 90 Years of industrial contracting expertise and an uncompromising
               commitment to safety and quality.
             </p>
             <Link

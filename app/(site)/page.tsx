@@ -3,10 +3,10 @@ import { HomePage } from "@/components/sections/home-page";
 import { createPageMetadata } from "@/lib/seo-metadata";
 
 const description =
-  "PCL Limited delivers asbestos removal, demolition and strip-out, enabling works, refurbishments, and remediation for industrial and commercial clients.";
+  "Pier Contractors Limited (PCL) delivers licensed asbestos removal, demolition, enabling works, refurbishments, and remediation for industrial and commercial clients across the UK.";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Industrial contracting across the UK",
+  title: "Asbestos removal & construction contractors",
   description,
   pathname: "/",
   ogImage: "/photos/PCLWraps820x500.png",

@@ -13,6 +13,7 @@ const footerNavigation = {
   company: [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
+    { name: "Certificates", href: "/certificates" },
     { name: "Projects", href: "/projects" },
     { name: "Get in touch", href: "/contact" }
   ],

@@ -1,5 +1,9 @@
 import { PageProjects } from "@/components/figma-generated/page-projects";
 
-export function ProjectsPage() {
-  return <PageProjects />;
+type ProjectsPageProps = {
+  category?: string;
+};
+
+export function ProjectsPage({ category }: ProjectsPageProps) {
+  return <PageProjects activeCategory={category} />;
 }
