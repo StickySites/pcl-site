@@ -24,11 +24,13 @@ const config: Config = {
         // brand: "#FF6B35",           // Pantone 165C — kept for reference
         // brand: "#c44112",
         // brand: "#cf572b",
-        brand: "#e35927",
+        // brand: "#e35927",
+        brand: "#E03A22",
         // "brand-accent": "#FF6B35",
         // "brand-accent": "#c44112",
         // "brand-accent": "#cf572b",
-        "brand-accent": "#e35927"
+        // "brand-accent": "#e35927",
+        "brand-accent": "#E03A22"
       },
       colors: {
         border: "hsl(var(--border))",
@@ -49,9 +51,12 @@ const config: Config = {
           // DEFAULT: "#cf572b",
           // accent: "#cf572b",
           // dark: "#b64d26",        // ~12% darker for hover states
-          DEFAULT: "#e35927",
-          accent: "#e35927",
-          dark: "#c84e22",        // ~12% darker for hover states
+          // DEFAULT: "#e35927",
+          // accent: "#e35927",
+          // dark: "#c84e22",        // ~12% darker for hover states
+          DEFAULT: "#E03A22",
+          accent: "#E03A22",
+          dark: "#c5331e",        // ~12% darker for hover states
           foreground: "#ffffff"
         },
         primary: {

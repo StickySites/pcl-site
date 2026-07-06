@@ -9,15 +9,18 @@
     /* --brand-accent: #fd5442; */
     /* --brand-accent: #c44112; */
     /* --brand-accent: #cf572b; */
-    --brand-accent: #e35927;
+    /* --brand-accent: #e35927; */
+    --brand-accent: #E03A22;
     /* --brand: #c73a2a; */
     /* --brand: #c44112; */
     /* --brand: #cf572b; */
-    --brand: #e35927;
+    /* --brand: #e35927; */
+    --brand: #E03A22;
     /* --brand-dark: #ad3228; */
     /* --brand-dark: #ac3910; */
     /* --brand-dark: #b64d26; */
-    --brand-dark: #c84e22;
+    /* --brand-dark: #c84e22; */
+    --brand-dark: #c5331e;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
     --card: 0 0% 100%;
@@ -25,7 +28,8 @@
     /* --primary: 7 66% 47%; */
     /* --primary: 16 83% 42%; */
     /* --primary: 16 66% 49%; */
-    --primary: 16 77% 52%;
+    /* --primary: 16 77% 52%; */
+    --primary: 8 75% 51%;
     --primary-foreground: 0 0% 98%;
     --secondary: 220 14% 96%;
     --secondary-foreground: 0 0% 9%;
@@ -38,7 +42,8 @@
     /* --ring: 7 66% 47%; */
     /* --ring: 16 83% 42%; */
     /* --ring: 16 66% 49%; */
-    --ring: 16 77% 52%;
+    /* --ring: 16 77% 52%; */
+    --ring: 8 75% 51%;
     --radius: 0.5rem;
   }
 
