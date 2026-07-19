@@ -22,6 +22,10 @@ const credentialLogos: readonly CredentialLogo[] = [
   { src: "/credentials/Home Page - ARCA Logo.png",                alt: "ARCA logo" },
   { src: "/credentials/Home Page - ASESA Logo.png",               alt: "ASESA Asbestos & Environmental Safety Association logo" },
   { src: "/credentials/Home Page - Social Value Logo.png",        alt: "Social Value logo" },
+  // ISO badges added per client brief July 2026
+  { src: "/credentials/iso-9001-ukas.png",                        alt: "ISO 9001 Quality Management certification" },
+  { src: "/credentials/iso-14001-ukas.png",                       alt: "ISO 14001 Environmental Management certification" },
+  { src: "/credentials/iso-45001-ukas.png",                       alt: "ISO 45001 Occupational Health & Safety certification" },
 ];
 
 function LogoCell({ logo }: { logo: CredentialLogo }) {

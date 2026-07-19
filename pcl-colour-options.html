@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PCL Limited — Header Colour Options</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      background: #f4f4f2;
+      padding: 40px 24px 60px;
+      color: #111;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .doc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #E03A22;
+      padding-bottom: 16px;
+      margin-bottom: 36px;
+    }
+
+    .doc-header-left h1 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+    }
+
+    .doc-header-left p {
+      font-size: 13px;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    .doc-header-right {
+      font-size: 12px;
+      color: #888;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .option-block {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid #e0e0de;
+    }
+
+    .option-block.recommended {
+      border-color: #111;
+      border-width: 1.5px;
+    }
+
+    /* Header preview */
+    .preview-top-bar {
+      padding: 7px 20px;
+      font-size: 12px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      gap: 16px;
+      letter-spacing: 0.01em;
+    }
+
+    .preview-top-bar .sep { opacity: 0.35; }
+
+    .preview-nav {
+      background: #ffffff;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .preview-logo-area {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .preview-logo-box {
+      width: 38px;
+      height: 28px;
+      background: #111;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .preview-logo-box span {
+      color: #fff;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    .preview-logo-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .preview-nav-links {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .preview-nav-link {
+      font-size: 12.5px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .preview-cta {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 999px;
+      color: #fff;
+      background: #E03A22;
+    }
+
+    /* Colour info row */
+    .colour-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 20px;
+      background: #fafaf9;
+      border-top: 1px solid #e8e8e8;
+    }
+
+    .swatch {
+      width: 36px;
+      height: 36px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,0.10);
+      flex-shrink: 0;
+    }
+
+    .colour-details {
+      flex: 1;
+    }
+
+    .colour-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111;
+    }
+
+    .colour-hex {
+      font-size: 12px;
+      color: #666;
+      font-family: "SF Mono", "Fira Mono", "Courier New", monospace;
+      margin-top: 1px;
+    }
+
+    .option-label {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .label-current { background: #e8f0fd; color: #2155a3; }
+    .label-recommended { background: #111; color: #fff; }
+    .label-option { background: #f0f0ee; color: #555; }
+    .label-offbrand { background: #fff3e0; color: #8a5800; }
+
+    .note-bar {
+      padding: 8px 20px;
+      font-size: 12px;
+      color: #888;
+      background: #fafaf9;
+      border-top: 1px solid #f0f0ee;
+      line-height: 1.5;
+    }
+
+    .note-bar strong {
+      color: #444;
+      font-weight: 600;
+    }
+
+    .doc-footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #e0e0de;
+      font-size: 12px;
+      color: #999;
+      display: flex;
+      justify-content: space-between;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <header class="doc-header">
+      <div class="doc-header-left">
+        <h1>PCL Limited — Header Colour Options</h1>
+        <p>Top information bar options for review &amp; approval</p>
+      </div>
+      <div class="doc-header-right">
+        Prepared by Rhyse Summers<br>
+        July 2026
+      </div>
+    </header>
+
+    <div class="options-grid">
+
+      <!-- Option A: Current Red -->
+      <div class="option-block">
+        <div class="preview-top-bar" style="background:#E03A22; color:#fff;">
+          <span>Office hours: Monday–Friday, 9am–5pm</span>
+          <span class="sep">|</span>
+          <span>Tel. 01992 576 404</span>
+          <span class="sep">|</span>
+          <span>info@pcl-limited.com</span>
+        </div>
+        <div class="preview-nav">
+          <div class="preview-logo-area">
+            <div class="preview-logo-box"><span>PCL</span></div>
+            <span class="preview-logo-name">Pier Contractors Limited</span>
+          </div>
+          <div class="preview-nav-links">
+            <span class="preview-nav-link">Home</span>
+            <span class="preview-nav-link">About</span>
+            <span class="preview-nav-link">Projects</span>
+            <span class="preview-nav-link">Services</span>
+            <span class="preview-cta">Get in touch</span>
+          </div>
+        </div>
+        <div class="colour-info">
+          <div class="swatch" style="background:#E03A22;"></div>
+          <div class="colour-details">
+            <div class="colour-name">Vivid Red</div>
+            <div class="colour-hex">#E03A22</div>
+          </div>
+          <span class="option-label label-current">A — Current</span>
+        </div>
+      </div>
+
+      <!-- Option B: Black, white text -->
+      <div class="option-block recommended">
+        <div class="preview-top-bar" style="background:#111111; color:#fff;">
+          <span>Office hours: Monday–Friday, 9am–5pm</span>
+          <span class="sep">|</span>
+          <span>Tel. 01992 576 404</span>
+          <span class="sep">|</span>
+          <span>info@pcl-limited.com</span>
+        </div>
+        <div class="preview-nav">
+          <div class="preview-logo-area">
+            <div class="preview-logo-box"><span>PCL</span></div>
+            <span class="preview-logo-name">Pier Contractors Limited</span>
+          </div>
+          <div class="preview-nav-links">
+            <span class="preview-nav-link">Home</span>
+            <span class="preview-nav-link">About</span>
+            <span class="preview-nav-link">Projects</span>
+            <span class="preview-nav-link">Services</span>
+            <span class="preview-cta">Get in touch</span>
+          </div>
+        </div>
+        <div class="colour-info">
+          <div class="swatch" style="background:#111111;"></div>
+          <div class="colour-details">
+            <div class="colour-name">Jet Black</div>
+            <div class="colour-hex">#111111 — white text</div>
+          </div>
+          <span class="option-label label-recommended">B — Recommended</span>
+        </div>
+        <div class="note-bar">Keeps the red + black brand identity. The red "Get in touch" button stands out more against the white nav.</div>
+      </div>
+
+      <!-- Option C: Black, red text on contacts -->
+      <div class="option-block">
+        <div class="preview-top-bar" style="background:#111111; color:#aaa;">
+          <span>Office hours: Monday–Friday, 9am–5pm</span>
+          <span class="sep">|</span>
+          <span style="color:#E03A22; font-weight:600;">Tel. 01992 576 404</span>
+          <span class="sep">|</span>
+          <span style="color:#E03A22; font-weight:600;">info@pcl-limited.com</span>
+        </div>
+        <div class="preview-nav">
+          <div class="preview-logo-area">
+            <div class="preview-logo-box"><span>PCL</span></div>
+            <span class="preview-logo-name">Pier Contractors Limited</span>
+          </div>
+          <div class="preview-nav-links">
+            <span class="preview-nav-link">Home</span>
+            <span class="preview-nav-link">About</span>
+            <span class="preview-nav-link">Projects</span>
+            <span class="preview-nav-link">Services</span>
+            <span class="preview-cta">Get in touch</span>
+          </div>
+        </div>
+        <div class="colour-info">
+          <div style="display:flex; gap:6px; flex-shrink:0;">
+            <div class="swatch" style="background:#111111; width:26px; height:36px;"></div>
+            <div class="swatch" style="background:#E03A22; width:26px; height:36px;"></div>
+          </div>
+          <div class="colour-details">
+            <div class="colour-name">Jet Black &amp; Vivid Red</div>
+            <div class="colour-hex">#111111 bar — #E03A22 contact details</div>
+          </div>
+          <span class="option-label label-option">C — Option</span>
+        </div>
+        <div class="note-bar">Red used on the phone number and email draws the eye to the most important contact details.</div>
+      </div>
+
+      <!-- Option D: Charcoal -->
+      <div class="option-block">
+        <div class="preview-top-bar" style="background:#2C2C2C; color:#ddd;">
+          <span>Office hours: Monday–Friday, 9am–5pm</span>
+          <span class="sep">|</span>
+          <span>Tel. 01992 576 404</span>
+          <span class="sep">|</span>
+          <span>info@pcl-limited.com</span>
+        </div>
+        <div class="preview-nav">
+          <div class="preview-logo-area">
+            <div class="preview-logo-box"><span>PCL</span></div>
+            <span class="preview-logo-name">Pier Contractors Limited</span>
+          </div>
+          <div class="preview-nav-links">
+            <span class="preview-nav-link">Home</span>
+            <span class="preview-nav-link">About</span>
+            <span class="preview-nav-link">Projects</span>
+            <span class="preview-nav-link">Services</span>
+            <span class="preview-cta">Get in touch</span>
+          </div>
+        </div>
+        <div class="colour-info">
+          <div class="swatch" style="background:#2C2C2C;"></div>
+          <div class="colour-details">
+            <div class="colour-name">Dark Charcoal</div>
+            <div class="colour-hex">#2C2C2C — light grey text</div>
+          </div>
+          <span class="option-label label-option">D — Option</span>
+        </div>
+      </div>
+
+      <!-- Option E: Forest Green -->
+      <div class="option-block">
+        <div class="preview-top-bar" style="background:#1E5C3A; color:#fff;">
+          <span>Office hours: Monday–Friday, 9am–5pm</span>
+          <span class="sep">|</span>
+          <span>Tel. 01992 576 404</span>
+          <span class="sep">|</span>
+          <span>info@pcl-limited.com</span>
+        </div>
+        <div class="preview-nav">
+          <div class="preview-logo-area">
+            <div class="preview-logo-box"><span>PCL</span></div>
+            <span class="preview-logo-name">Pier Contractors Limited</span>
+          </div>
+          <div class="preview-nav-links">
+            <span class="preview-nav-link">Home</span>
+            <span class="preview-nav-link">About</span>
+            <span class="preview-nav-link">Projects</span>
+            <span class="preview-nav-link">Services</span>
+            <span class="preview-cta">Get in touch</span>
+          </div>
+        </div>
+        <div class="colour-info">
+          <div class="swatch" style="background:#1E5C3A;"></div>
+          <div class="colour-details">
+            <div class="colour-name">Forest Green</div>
+            <div class="colour-hex">#1E5C3A — white text</div>
+          </div>
+          <span class="option-label label-offbrand">E — As suggested</span>
+        </div>
+        <div class="note-bar"><strong>Note:</strong> Green is not currently part of the PCL brand. This can work as a complementary contrast to red but would introduce a new colour to the identity.</div>
+      </div>
+
+    </div>
+
+    <footer class="doc-footer">
+      <span>PCL Limited — pcl-site-seven.vercel.app</span>
+      <span>Please reply with your preferred option (A–E)</span>
+    </footer>
+
+  </div>
+</body>
+</html>

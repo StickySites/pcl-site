@@ -123,9 +123,13 @@ export function PageHome() {
               <span className="font-semibold text-white">Pier Contractors Limited</span> specialises in asbestos removal,
               demolition, structural alterations, and fit-out and refurbishment.
             </p> */}
-            <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+            {/* <p className="mb-8 text-lg text-gray-200 sm:text-xl">
               <span className="font-semibold text-white">Pier Contractors Limited</span> specialises in asbestos removal,
               demolition, structural alterations, and refurbishment.
+            </p> */}
+            <p className="mb-8 text-lg text-gray-200 sm:text-xl">
+              A multi-disciplined company specialising in the removal of asbestos and construction works, including
+              demolition, structural alterations, fit-out and refurbishment.
             </p>
             <div className="flex flex-col gap-4 sm:flex-row">
               <Link

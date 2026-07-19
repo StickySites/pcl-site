@@ -14,6 +14,7 @@ const footerNavigation = {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Certificates", href: "/certificates" },
+    { name: "Carbon Reduction Plan", href: "/certificates#carbon-reduction-plan" },
     { name: "Projects", href: "/projects" },
     { name: "Get in touch", href: "/contact" }
   ],
@@ -52,12 +53,12 @@ export function SiteFooter() {
                   )}
                 </span>
               </Link>
-              <p className="min-w-0 text-pretty text-sm text-gray-400 sm:text-base lg:max-w-md lg:flex-1 lg:pt-0.5">
+              <p className="min-w-0 text-pretty text-sm text-gray-300 sm:text-base lg:max-w-md lg:flex-1 lg:pt-0.5">
                 Professional industrial contractors specialising in asbestos removal, demolition, and commercial
                 refurbishments. Safety-first approach with comprehensive compliance.
               </p>
             </div>
-            <div className="mx-auto mt-6 max-w-md space-y-2 text-sm text-gray-400 lg:mx-0 lg:max-w-none">
+            <div className="mx-auto mt-6 max-w-md space-y-2 text-sm text-gray-300 lg:mx-0 lg:max-w-none">
               <div className="flex items-center justify-center gap-2 lg:justify-start">
                 <Phone className="h-4 w-4 shrink-0 text-brand" aria-hidden />
                 <a
@@ -87,7 +88,7 @@ export function SiteFooter() {
                   {siteContact.address.lines.join(", ")}
                 </a>
               </div>
-              <p className="pt-1 text-xs text-gray-500">{siteContact.hours.summary}</p>
+              <p className="pt-1 text-xs text-gray-400">{siteContact.hours.summary}</p>
             </div>
           </div>
 
@@ -99,7 +100,7 @@ export function SiteFooter() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="inline-block py-1.5 text-gray-400 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:py-0"
+                      className="inline-block py-1.5 text-gray-300 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:py-0"
                     >
                       {item.name}
                     </Link>
@@ -115,7 +116,7 @@ export function SiteFooter() {
                   <li key={item.name}>
                     <Link
                       href={item.href}
-                      className="inline-block py-1.5 text-gray-400 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:py-0"
+                      className="inline-block py-1.5 text-gray-300 transition-colors hover:text-brand focus-visible:text-brand focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:py-0"
                     >
                       {item.name}
                     </Link>
@@ -133,16 +134,16 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <p className="mx-auto mt-10 max-w-4xl text-center text-xs leading-relaxed text-gray-500 sm:text-sm">
+        <p className="mx-auto mt-10 max-w-4xl text-center text-xs leading-relaxed text-gray-400 sm:text-sm">
           All projects are managed within industry legislation, approved codes of practice and HSE guidance notes.
           Rigorous audits ensure all quality control procedures are maintained both internally and by external
           independent organisations.
         </p>
 
         <div className="mt-8 border-t border-gray-800 pt-8">
-          <p className="text-center text-sm leading-normal text-gray-400">
+          <p className="text-center text-sm leading-normal text-gray-300">
             <span>© {new Date().getFullYear()} PCL Limited. All rights reserved.</span>
-            <span className="select-none px-2 text-gray-600" aria-hidden="true">
+            <span className="select-none px-2 text-gray-500" aria-hidden="true">
               |
             </span>
             <span>

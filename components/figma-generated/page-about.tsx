@@ -64,7 +64,8 @@ export function PageAbout() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-black">Our Story</h2>
-              <div className="space-y-4 text-muted-foreground">
+              {/* text-muted-foreground -> text-gray-700 per client request July 2026 (improve legibility) */}
+              <div className="space-y-4 text-gray-700">
                 {/* <p>
                   Founded over twenty years ago, PCL Limited (Pier Contractors Limited) has established itself as a
                   trusted partner for complex industrial contracting projects across the United Kingdom.
@@ -138,7 +139,7 @@ export function PageAbout() {
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
               <h2 className="mb-6 text-3xl font-bold text-black">Credentials & Accreditations</h2>
-              <p className="mb-6 text-muted-foreground">
+              <p className="mb-6 text-gray-700">
                 Our comprehensive accreditations and certifications demonstrate our commitment to the highest industry
                 standards across quality, safety, and environmental management.
               </p>
@@ -154,7 +155,7 @@ export function PageAbout() {
 
             <div>
               <h2 className="mb-6 text-3xl font-bold text-black">Safety Culture</h2>
-              <div className="space-y-4 text-muted-foreground">
+              <div className="space-y-4 text-gray-700">
                 <p>
                   At PCL Limited, safety is embedded in our organisational culture. Every team member receives
                   comprehensive training, and our rigorous safety protocols exceed industry requirements.
