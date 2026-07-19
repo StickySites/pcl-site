@@ -56,8 +56,9 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 w-full">
+      {/* bg-brand -> bg-[#1E5C3A] per client request (top bar only; CTAs keep bg-brand) */}
       <div
-        className="hidden border-b border-white/15 bg-brand text-brand-foreground lg:block"
+        className="hidden border-b border-white/15 bg-[#1E5C3A] text-brand-foreground lg:block"
         aria-label="Quick contact"
       >
         <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8">
