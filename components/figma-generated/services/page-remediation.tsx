@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Sparkles } from "lucide-react";
+import { ArrowRight, CheckCircle2, FlaskConical } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
 import { RevealOnView } from "@/components/reveal-on-view";
 import { remediationFaqItems } from "@/lib/service-faqs";
@@ -59,12 +59,10 @@ export function PageRemediation() {
           </div>
           <div className="mt-6 max-w-3xl">
             <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-lg bg-brand">
-              <Sparkles className="h-8 w-8 text-brand-foreground" />
+              <FlaskConical className="h-8 w-8 text-brand-foreground" />
             </div>
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wide text-brand">
-              Industrial & environmental remediation
-            </p>
             <h1 className="mb-6 text-4xl font-bold text-white sm:text-5xl">Remediation</h1>
+            <p className="mb-6 mt-2 text-lg text-gray-300 sm:text-xl">Industrial & environmental remediation</p>
             <p className="text-xl text-gray-300">
               Rigorous planning and delivery for hazardous materials, biological risks, and sensitive environments, from
               assessment and containment through to verified clearance and handover documentation.

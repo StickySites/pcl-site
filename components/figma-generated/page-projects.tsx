@@ -11,8 +11,7 @@ const categories = [
   { id: "asbestos", name: "Asbestos Removal" },
   { id: "demolition", name: "Demolition" },
   { id: "refurbishment", name: "Refurbishments" },
-  { id: "enabling", name: "Enabling Works & Structural Alterations" },
-  { id: "remediation", name: "Remediation" }
+  { id: "enabling", name: "Enabling Works & Structural Alterations" }
 ] as const;
 
 type CategoryId = (typeof categories)[number]["id"];

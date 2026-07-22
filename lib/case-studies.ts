@@ -285,7 +285,8 @@ export const caseStudies: readonly CaseStudy[] = [
 export const featuredCaseStudySlugs = [
   "royal-garden-hotel",
   "greenwich-painted-hall",
-  "royal-mail-romford"
+  // "royal-mail-romford",  // original
+  "alexandra-palace"
 ] as const satisfies ReadonlyArray<CaseStudy["slug"]>;
 // Note: travis-perkins and pinewood-studios removed from slug union -- they are commented out above.
 
