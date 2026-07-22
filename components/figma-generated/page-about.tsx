@@ -100,7 +100,8 @@ export function PageAbout() {
               <div className="mt-6 rounded-lg bg-brand p-6 text-brand-foreground">
                 {/* <div className="mb-2 text-4xl font-bold">20+</div> */}
                 <div className="mb-2 text-4xl font-bold">90+</div>
-                <div className="text-lg">Years of Professional Excellence</div>
+                {/* <div className="text-lg">Years of Professional Excellence</div> */}
+                <div className="text-lg">Years of Collective Professional Experience</div>
               </div>
             </div>
           </div>
