@@ -267,6 +267,28 @@ export const caseStudies: readonly CaseStudy[] = [
     // image: "/photos/AsbestosRemovalImage_649x554.png",  // original
     image: "/project-images/fitzwimarc-school.png"
   },
+  {
+    slug: "cartersfield",
+    title: "Cartersfield",
+    pdfFileName: "Case Study Cartersfield.pdf",
+    category: "demolition",
+    categoryLabel: "Demolition & Asbestos Removal",
+    location: "UK",
+    duration: "Case study",
+    description: "Demolition and asbestos removal works.",
+    image: "/photos/VerticalDemo.jpg"
+  },
+  {
+    slug: "king-edward-school",
+    title: "King Edward School",
+    pdfFileName: "Case Study King Edward School.pdf",
+    category: "asbestos",
+    categoryLabel: "Asbestos Removal",
+    location: "UK",
+    duration: "Case study",
+    description: "Asbestos removal works.",
+    image: "/photos/AsbestosRemovalImage_649x554.png"
+  },
   // Pinewood Studios -- commented out per client brief June 2026
   // {
   //   slug: "pinewood-studios",
