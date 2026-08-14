@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CheckCircle2, Shield, Target, Users } from "lucide-react";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
 
 const values = [
@@ -180,6 +181,10 @@ export function PageAbout() {
           </div>
         </div>
       </section>
+      </RevealOnView>
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-muted" />
       </RevealOnView>
 
       <RevealOnView>

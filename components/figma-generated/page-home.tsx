@@ -4,6 +4,7 @@ import { ArrowRight, Award, Building2, CheckCircle2, Factory, HardHat, Shield, S
 import { CertificationsStrip } from "@/components/figma-generated/certifications-strip";
 import { HomeHeroBackground } from "@/components/figma-generated/home-hero-background";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
 import type { CaseStudyCategory } from "@/lib/case-studies";
 import { getFeaturedCaseStudies } from "@/lib/case-studies";
@@ -338,6 +339,10 @@ export function PageHome() {
           </div>
         </div>
       </section>
+      </RevealOnView>
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" />
       </RevealOnView>
 
       <RevealOnView>

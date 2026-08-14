@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Wrench } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
+import { getTestimonialsForService } from "@/lib/testimonials";
 import { enablingWorksFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
@@ -205,6 +207,10 @@ export function PageEnablingWorks() {
         intro="How enabling works and structural alterations are scoped, handed over, and coordinated with your wider construction programme."
         items={enablingWorksFaqItems}
       />
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" items={getTestimonialsForService("enabling")} />
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

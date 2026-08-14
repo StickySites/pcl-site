@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, FlaskConical } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
 import { remediationFaqItems } from "@/lib/service-faqs";
 
@@ -192,6 +193,10 @@ export function PageRemediation() {
         intro="Remediation scope, containment, validation, and how we align with regulated or sensitive environments."
         items={remediationFaqItems}
       />
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" />
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

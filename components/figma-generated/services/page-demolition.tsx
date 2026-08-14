@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Hammer } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
 import { demolitionFaqItems } from "@/lib/service-faqs";
 
@@ -203,6 +204,10 @@ export function PageDemolition() {
         intro="Practical questions on demolition, strip-out, controls, and how we plan work around your site."
         items={demolitionFaqItems}
       />
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" />
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

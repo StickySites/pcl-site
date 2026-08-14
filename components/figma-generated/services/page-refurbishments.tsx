@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Building2, CheckCircle2 } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
+import { getTestimonialsForService } from "@/lib/testimonials";
 import { refurbishmentFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
@@ -207,6 +209,10 @@ export function PageRefurbishments() {
         intro="Refurbishment delivery, phasing, quality, and how we keep your building operational where possible."
         items={refurbishmentFaqItems}
       />
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" items={getTestimonialsForService("refurbishment")} />
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

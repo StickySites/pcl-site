@@ -2,7 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight, CheckCircle2, FileCheck, Shield } from "lucide-react";
 import { ServiceFaqSection } from "@/components/figma-generated/service-faq-section";
+import { TestimonialsSection } from "@/components/figma-generated/testimonials-section";
 import { RevealOnView } from "@/components/reveal-on-view";
+import { getTestimonialsForService } from "@/lib/testimonials";
 import { asbestosRemovalFaqItems } from "@/lib/service-faqs";
 
 const processSteps = [
@@ -223,6 +225,10 @@ export function PageAsbestosRemoval() {
         intro="Common questions about licensed asbestos removal, clearances, and how we work on your site."
         items={asbestosRemovalFaqItems}
       />
+
+      <RevealOnView>
+        <TestimonialsSection className="bg-white" items={getTestimonialsForService("asbestos")} />
+      </RevealOnView>
 
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
