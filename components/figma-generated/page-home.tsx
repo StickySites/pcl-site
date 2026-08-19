@@ -280,6 +280,10 @@ export function PageHome() {
       </RevealOnView>
 
       <RevealOnView>
+        <TestimonialsSection className="bg-white" />
+      </RevealOnView>
+
+      <RevealOnView>
       <section className="bg-muted py-16 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12 text-center">
@@ -339,10 +343,6 @@ export function PageHome() {
           </div>
         </div>
       </section>
-      </RevealOnView>
-
-      <RevealOnView>
-        <TestimonialsSection className="bg-white" />
       </RevealOnView>
 
       <RevealOnView>

@@ -22,6 +22,28 @@ function getReducedMotionServerSnapshot() {
   return false;
 }
 
+function subscribeToDesktopBreakpoint(onStoreChange: () => void) {
+  const media = window.matchMedia("(min-width: 1024px)");
+  media.addEventListener("change", onStoreChange);
+  return () => media.removeEventListener("change", onStoreChange);
+}
+
+function getDesktopBreakpointSnapshot() {
+  return window.matchMedia("(min-width: 1024px)").matches;
+}
+
+function getDesktopBreakpointServerSnapshot() {
+  return false;
+}
+
+function groupIntoPages(items: readonly Testimonial[], itemsPerPage: number) {
+  const pages: Testimonial[][] = [];
+  for (let index = 0; index < items.length; index += itemsPerPage) {
+    pages.push(items.slice(index, index + itemsPerPage));
+  }
+  return pages;
+}
+
 type TestimonialsSectionProps = {
   heading?: string;
   className?: string;
@@ -33,7 +55,7 @@ function TestimonialCard({ item }: { item: Testimonial }) {
   const subtitle = [item.role, item.organisation, item.project].filter(Boolean).join(" \u00b7 ");
 
   return (
-    <article className="flex flex-col rounded-lg bg-white p-5 shadow-md sm:p-6">
+    <article className="flex h-full flex-col rounded-lg bg-white p-5 shadow-md sm:p-6">
       {item.source === "google" ? (
         <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-700">Google review</p>
       ) : null}
@@ -66,36 +88,44 @@ export function TestimonialsSection({
 }: TestimonialsSectionProps) {
   const headingId = useId();
   const regionId = useId();
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activePage, setActivePage] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const prefersReducedMotion = useSyncExternalStore(
     subscribeToReducedMotion,
     getReducedMotionSnapshot,
     getReducedMotionServerSnapshot
   );
+  const isDesktop = useSyncExternalStore(
+    subscribeToDesktopBreakpoint,
+    getDesktopBreakpointSnapshot,
+    getDesktopBreakpointServerSnapshot
+  );
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const slideCount = items.length;
-  const safeIndex = slideCount > 0 ? activeIndex % slideCount : 0;
+  const itemsPerPage = isDesktop ? 2 : 1;
+  const pages = groupIntoPages(items, itemsPerPage);
+  const pageCount = pages.length;
+  const safePage = pageCount > 0 ? activePage % pageCount : 0;
 
   const goTo = useCallback(
-    (index: number) => {
-      if (slideCount === 0) return;
-      setActiveIndex(((index % slideCount) + slideCount) % slideCount);
+    (pageIndex: number) => {
+      if (pageCount === 0) return;
+      setActivePage(((pageIndex % pageCount) + pageCount) % pageCount);
     },
-    [slideCount]
+    [pageCount]
   );
 
-  const goPrev = useCallback(() => goTo(safeIndex - 1), [goTo, safeIndex]);
-  const goNext = useCallback(() => goTo(safeIndex + 1), [goTo, safeIndex]);
+  const goPrev = useCallback(() => goTo(safePage - 1), [goTo, safePage]);
+  const goNext = useCallback(() => goTo(safePage + 1), [goTo, safePage]);
 
   useEffect(() => {
-    if (slideCount <= 1 || isPaused || prefersReducedMotion) return;
+    if (pageCount <= 1 || isPaused || prefersReducedMotion) return;
     const timer = window.setInterval(() => {
-      setActiveIndex((current) => (current + 1) % slideCount);
+      setActivePage((current) => (current + 1) % pageCount);
     }, AUTOPLAY_MS);
     return () => window.clearInterval(timer);
-  }, [isPaused, prefersReducedMotion, slideCount]);
+  }, [isPaused, pageCount, prefersReducedMotion]);
 
   if (slideCount === 0) return null;
 
@@ -164,18 +194,25 @@ export function TestimonialsSection({
           <div className="w-full overflow-hidden rounded-lg">
             <div
               className="flex w-full items-start transition-transform duration-500 ease-out motion-reduce:transition-none"
-              style={{ transform: `translate3d(-${safeIndex * 100}%, 0, 0)` }}
+              style={{ transform: `translate3d(-${safePage * 100}%, 0, 0)` }}
               aria-live="polite"
             >
-              {items.map((item) => (
-                <div key={item.id} className="min-w-0 shrink-0 grow-0 basis-full">
-                  <TestimonialCard item={item} />
+              {pages.map((page, pageIndex) => (
+                <div key={`page-${pageIndex}`} className="min-w-0 shrink-0 grow-0 basis-full">
+                  <div className="grid grid-cols-1 items-stretch gap-4 lg:grid-cols-2">
+                    {page.map((item) => (
+                      <div key={item.id} className="h-full">
+                        <TestimonialCard item={item} />
+                      </div>
+                    ))}
+                    {isDesktop && page.length === 1 ? <div className="hidden lg:block" aria-hidden /> : null}
+                  </div>
                 </div>
               ))}
             </div>
           </div>
 
-          {slideCount > 1 ? (
+          {pageCount > 1 ? (
             <>
               <div className="mt-4 flex items-center justify-center gap-2 sm:mt-5 sm:gap-3">
                 <button
@@ -191,19 +228,19 @@ export function TestimonialsSection({
                 <div
                   className="flex max-w-[min(100%,12rem)] flex-wrap items-center justify-center gap-1.5 sm:max-w-none sm:flex-nowrap sm:gap-2"
                   role="tablist"
-                  aria-label="Testimonial slides"
+                  aria-label="Testimonial pages"
                 >
-                  {items.map((item, index) => (
+                  {pages.map((_, pageIndex) => (
                     <button
-                      key={item.id}
+                      key={`page-dot-${pageIndex}`}
                       type="button"
                       role="tab"
-                      aria-selected={index === safeIndex}
-                      aria-label={`Go to testimonial ${index + 1} of ${slideCount}`}
-                      onClick={() => goTo(index)}
+                      aria-selected={pageIndex === safePage}
+                      aria-label={`Go to testimonial page ${pageIndex + 1} of ${pageCount}`}
+                      onClick={() => goTo(pageIndex)}
                       className={cn(
                         "h-2 w-2 shrink-0 rounded-full transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand sm:h-2.5 sm:w-2.5",
-                        index === safeIndex ? "bg-brand" : "bg-border hover:bg-muted-foreground/40"
+                        pageIndex === safePage ? "bg-brand" : "bg-border hover:bg-muted-foreground/40"
                       )}
                     />
                   ))}
@@ -221,7 +258,7 @@ export function TestimonialsSection({
               </div>
 
               <p className="mt-2 text-center text-xs text-neutral-600" aria-hidden>
-                {safeIndex + 1} / {slideCount}
+                {safePage + 1} / {pageCount}
               </p>
             </>
           ) : null}
