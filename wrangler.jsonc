@@ -1,0 +1,31 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "pcl-site",
+	"compatibility_date": "2026-09-16",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			// Must match the worker "name" above (CF Worker is pcl-site, not pcl-website)
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "pcl-site"
+		}
+	],
+	"r2_buckets": [
+		{
+			"binding": "NEXT_INC_CACHE_R2_BUCKET",
+			// Existing bucket from the failed migrate (named from package.json at the time)
+			"bucket_name": "pcl-website-opennext-cache"
+		}
+	],
+	"images": {
+		"binding": "IMAGES"
+	},
+	"observability": {
+		"enabled": true
+	}
+}

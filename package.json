@@ -1,16 +1,22 @@
 {
-  "name": "pcl-website",
+  "name": "pcl-site",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
+    "build:worker": "opennextjs-cloudflare build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "studio": "sanity dev"
+    "studio": "sanity dev",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.6",
     "@radix-ui/react-slot": "^1.2.4",
     "@sanity/client": "^7.22.0",
     "@sanity/image-url": "^2.1.1",
@@ -34,6 +40,7 @@
     "eslint-config-next": "^16.2.4",
     "postcss": "^8.5.12",
     "tailwindcss": "^3.4.17",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "wrangler": "^4.133.0"
   }
 }
