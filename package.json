@@ -2,6 +2,9 @@
   "name": "pcl-site",
   "version": "0.1.0",
   "private": true,
+  "bin": {
+    "opennextjs-cloudflare": "./scripts/opennextjs-cloudflare.cjs"
+  },
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
@@ -10,10 +13,12 @@
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "studio": "sanity dev",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "preview": "opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare deploy",
+    "upload": "opennextjs-cloudflare upload",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts",
+    "postinstall": "node ./scripts/link-opennext-wrapper.cjs",
+    "prepare": "node ./scripts/link-opennext-wrapper.cjs"
   },
   "dependencies": {
     "@opennextjs/cloudflare": "^1.20.6",
