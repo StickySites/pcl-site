@@ -28,6 +28,17 @@ Copy `.env.example` to `.env.local`. For local marketing pages you only need:
 
 To use Sanity for `getPageContent` and Studio, set `CONTENT_SOURCE=sanity` and fill the `NEXT_PUBLIC_SANITY_*` and `SANITY_API_READ_TOKEN` values from `.env.example`.
 
+### Maintenance mode
+
+When maintenance is enabled, middleware rewrites **all public routes** to a branded maintenance page. `/studio` and static assets stay available.
+
+- **Enabled when:** `MAINTENANCE_MODE` is `"true"` / `"1"`, or unset (defaults on).
+- **Production:** set in `wrangler.jsonc` under `vars` (currently `"true"`).
+- **Local:** `.env.local` and `.dev.vars` (see `.env.example`).
+- **Turn off:** set `MAINTENANCE_MODE` to `"false"` in `wrangler.jsonc` (and locally), then redeploy / restart `npm run dev`.
+
+Visitors see: *Website under maintenance. Check back later for the new site!*
+
 ## Project layout
 
 | Path | Purpose |

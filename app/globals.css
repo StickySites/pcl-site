@@ -55,3 +55,41 @@
     @apply bg-background font-sans text-foreground antialiased;
   }
 }
+
+@keyframes maintenance-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes maintenance-rule-in {
+  from {
+    opacity: 0;
+    transform: scaleX(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+.maintenance-enter {
+  animation: maintenance-fade-up 0.7s ease-out both;
+}
+
+.maintenance-rule {
+  transform-origin: center;
+  animation: maintenance-rule-in 0.9s ease-out 0.25s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .maintenance-enter,
+  .maintenance-rule {
+    animation: none;
+  }
+}
